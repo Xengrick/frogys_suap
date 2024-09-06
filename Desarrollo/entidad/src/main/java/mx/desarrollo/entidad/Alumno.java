@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package mx.desarrollo.entidad;
-
+//soy un comentario
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
