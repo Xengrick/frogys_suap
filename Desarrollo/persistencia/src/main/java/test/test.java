@@ -19,7 +19,7 @@ public class test {
         List<Usuario> listaUsuarios = new ArrayList();
         UsuarioDAO usuarioDao = new UsuarioDAO();
         listaUsuarios = usuarioDao.findAll();
-        
+        //Primer commit en Gustavo
         for(Usuario us : listaUsuarios){
             System.out.println("Correo: " + us.getCorreo() + " " + us.getContrasena());
         }
