@@ -11,23 +11,40 @@
     </h:head>
     <h:body>
         <div class="header">
-            <img src="path/to/logo" alt="Logo" style="vertical-align: middle;" />
+            <img src="escudo.png" alt="Logo" style="vertical-align: middle; width: 30px;" />
+           
             Universidad Autónoma de Baja California - Facultad de Ingeniería
-            <h:commandButton value="Cerrar Sesión" action="#{loginUI.logout}" style="float: right;" />
+           <button class="cesion" style="margin-left:95%;"><img src="cerrarsesion.png" alt="inicio" style="vertical-align: middle; width:20px;" /></button>
+
         </div>
 
         <div class="nav-bar">
-            <a href="#">Profesores</a>
+             <img src="profesores.png" alt="Logo" style="vertical-align: middle; width: 30px;" />
+            <a href="gestionprofesores.html">Profesores</a>
+             <img src="unidades.png" alt="Logo" style="vertical-align: middle; width: 30px;" />
             <a href="#">Unidades de Aprendizaje</a>
+             <img src="asigacion.png" alt="Logo" style="vertical-align: middle; width: 30px;" />
             <a href="#">Asignaciones</a>
         </div>
 
-
+        <div class="siract">
+            Bienvenidos a SIRACT
+        </div>
         
         <div class="footer">
             Examen Avanti 2024
         </div>
          <style>
+             
+             .siract
+             {
+                 background: white;
+                 font-size: 50px;
+                 text-align: center;
+                 padding: 18.5%;
+                 
+                height:auto;
+             }
             .header {
                 background-color: #f5f0d7;
                 padding: 20px;
