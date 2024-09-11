@@ -5,13 +5,13 @@
  */
 package mx.desarrollo.DAO;
 
-import mx.desarrollo.entidad.Alumno;
+import mx.desarrollo.entidad.Asignacion;
 import mx.desarrollo.persistencia.AbstractDAO;
 
 /**
  *
- * @author total
+ * @author Be
  */
-public class AlumnoDAO extends AbstractDAO<Integer, Alumno>{
+public class AsignacionDAO extends AbstractDAO<Integer, Asignacion>{
     
 }

@@ -1,0 +1,18 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package mx.desarrollo.delegate;
+
+import mx.desarrollo.entidad.UnidadAprendizaje;
+import mx.desarrollo.integracion.ServiceLocator;
+/**
+ *
+ * @author Be
+ */
+public class DelegateUnidadAprendizaje {
+    public void registrarUnidadAprendizaje(UnidadAprendizaje unidadAprendizaje){
+        ServiceLocator.getInstanceUnidadAprendizajeDAO().save(unidadAprendizaje);
+    }
+}

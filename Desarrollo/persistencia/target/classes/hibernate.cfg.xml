@@ -48,7 +48,7 @@ Contributor(s):
     <property name="hibernate.enable_lazy_load_no_trans">true</property>
     <property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
     <property name="hibernate.connection.url">
-    jdbc:mysql://localhost:3306/desarrollo?zeroDateTimeBehavior=convertToNull
+    jdbc:mysql://localhost:3306/suap?zeroDateTimeBehavior=convertToNull
     </property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">root</property>
@@ -62,7 +62,9 @@ Contributor(s):
     <property name="c3p0.min_size">5</property>
     <property name="c3p0.timeout">100</property>
     
-    <mapping class="mx.desarrollo.entidad.Alumno"/>
+    <mapping class="mx.desarrollo.entidad.Asignacion"/>
+    <mapping class="mx.desarrollo.entidad.Profesor"/>
+    <mapping class="mx.desarrollo.entidad.UnidadAprendizaje"/>
     <mapping class="mx.desarrollo.entidad.Usuario"/>
   </session-factory>
 </hibernate-configuration>
