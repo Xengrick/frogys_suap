@@ -4,56 +4,96 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:jsf="http://xmlns.jcp.org/jsf"
-          
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Facelet Title</title>
+       
     </h:head>
     <h:body>
-        <p:panelGrid class="txt">
-            <f:facet name="header">  
-                <p:row>
-                    <p:column colspan="7"><p:graphicImage url="resources/user.png" class="logo"/></p:column>
-                </p:row>
-            </f:facet>
-            <p:row>
-                <p:column styleClass="celda">Nombre:</p:column>
-                <p:column><h:outputText value="#{loginUI.usuario.idAlumno.nombre}" /></p:column>
-            </p:row>
-            <p:row>
-                <p:column styleClass="celda">Apellido:</p:column>
-                <p:column><h:outputText value="#{loginUI.usuario.idAlumno.apellidos}" /></p:column>
-            </p:row>
-            <p:row>
-                <p:column styleClass="celda">Matricula:</p:column>
-                <p:column><h:outputText value="#{loginUI.usuario.idAlumno.matricula}" /></p:column>
-            </p:row>
-        </p:panelGrid>
-    </h:body>
-    <style>
-        .logo{
-            width: 170px;
-        }
-        .celda{
-            width: 25%;
-            background-color: #089b4d;
-            color:white;
-        }
-        .txt{
-                position: absolute;
-                top:0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                height: 35%;
-                width: 25%;
-                padding: 25px;
-                margin: auto;
-                background: white;
-                border-radius: 5px;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            
-        }
-    </style>
-</html>
+        <div class="header">
+            <img src="escudo.png" alt="Logo" style="vertical-align: middle; width: 30px;" />
+           
+            Universidad Autónoma de Baja California - Facultad de Ingeniería
+           <button class="cesion" style="margin-left:95%;"><img src="cerrarsesion.png" alt="inicio" style="vertical-align: middle; width:20px;" /></button>
 
+        </div>
+
+        <div class="nav-bar">
+             <img src="profesores.png" alt="Logo" style="vertical-align: middle; width: 30px;" />
+            <a href="gestionprofesores.html">Profesores</a>
+             <img src="unidades.png" alt="Logo" style="vertical-align: middle; width: 30px;" />
+            <a href="#">Unidades de Aprendizaje</a>
+             <img src="asigacion.png" alt="Logo" style="vertical-align: middle; width: 30px;" />
+            <a href="#">Asignaciones</a>
+        </div>
+
+        <div class="siract">
+            Bienvenidos a SIRACT
+        </div>
+        
+        <div class="footer">
+            Examen Avanti 2024
+        </div>
+         <style>
+             
+             .siract
+             {
+                 background: white;
+                 font-size: 50px;
+                 text-align: center;
+                 padding: 18.5%;
+                 
+                height:auto;
+             }
+            .header {
+                background-color: #f5f0d7;
+                padding: 20px;
+                text-align: center;
+                font-size: 24px;
+                color: green;
+                border-bottom: 3px solid green;
+            }
+            .nav-bar {
+                background-color: #ffd699;
+                padding: 10px;
+                text-align: center;
+                font-size: 18px;
+                color: green;
+                border-bottom: 2px solid green;
+            }
+            .nav-bar a {
+                margin: 0 15px;
+                color: green;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            .panel {
+                padding: 20px;
+                margin: 20px;
+                background-color: #FFF9DB;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            .panel h2 {
+                color: green;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .celda {
+                font-weight: bold;
+                color: green;
+            }
+            .footer {
+                background-color: #ffd699;
+                text-align: center;
+                padding: 10px;
+                font-size: 16px;
+                color: green;
+                border-top: 2px solid green;
+            }
+        </style>
+        
+        
+       
+    </h:body>
+</html>
