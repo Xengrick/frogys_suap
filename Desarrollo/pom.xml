@@ -9,7 +9,6 @@
         <module>entidad</module>
         <module>persistencia</module>
         <module>negocio</module>
-      <module>vista</module>
   </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

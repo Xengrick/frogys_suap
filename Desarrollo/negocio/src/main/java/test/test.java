@@ -5,6 +5,7 @@
  */
 package test;
 
+import mx.desarrollo.entidad.Asignacion;
 import mx.desarrollo.entidad.Usuario;
 import mx.desarrollo.integracion.ServiceFacadeLocator;
 
@@ -16,12 +17,15 @@ public class test {
     public static void main(String[] args) {
         Usuario usuario = new Usuario();
         
-        usuario = ServiceFacadeLocator.getInstanceFacadeUsuario().login("1234","alan@uabc.edu.mx");
+        usuario = ServiceFacadeLocator.getInstanceFacadeUsuario().login("admin","1234");
         
-        if(usuario.getIdusuario() != null){
-            System.out.println("Login exitoso con el correo: " + usuario.getCorreo());
+        if(usuario.getIdUsuario() != null){
+            System.out.println("Login exitoso con el usuario " + usuario.getNombreUsuario());
         }else{
             System.out.println("No se encontro registro");
         }
+        
+        Asignacion asignacion = new Asignacion();
+        asignacion = ServiceFacadeLocator.getInstanceFacadeAsignacion().registrarAsignacion(1, 1);
     }
 }
