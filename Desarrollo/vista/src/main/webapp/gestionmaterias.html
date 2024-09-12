@@ -116,9 +116,9 @@ button:hover {
         <div class="header">
             <div class="title-section">
                 <img src="profesores.png" alt="Icono Profesores" >
-                <h1>Profesores</h1>
+                <h1>Materias</h1>
             </div>
-            <button class="close-btn"><a href="index.xhtml"><img src="inicio.png" alt="inicio" style="vertical-align: middle;" /></a></button>
+            <button class="inicio"><a href="index.xhtml"><img src="inicio.png" alt="inicio" style="vertical-align: middle;" /></a></button>
             
         </div>
 
@@ -126,32 +126,29 @@ button:hover {
             <div class="sidebar">
                 <a href="#">
                     <img src="agregar.png" alt="Agregar Profesor">
-                    Agregar Profesor
+                    Agregar Materia
                     
                 </a>
                 <a href="#">
                     <img src="consulta.png" alt="Consulta General">
                     Consulta General
                 </a>
-                <a href="#">
-                    <img src="eliminar.png" alt="Eliminar Profesor">
-                    Eliminar Profesor
-                </a>
+               
             </div>
 
             <div class="content">
                   <form action="procesarFormulario.php" method="post">
-        <label for="identificador">ID Profesor(a):</label>
-        <input type="text" id="identificador" name="identificador" />
-        
-        <label for="nombre">Nombre(s):</label>
-        <input type="text" id="nombre" name="nombre" />
+        <label for="nombremateria">Nombre:</label>
+        <input type="text" id="nombremateria" name="nombremateria" />
         <br />
-        <label for="apellido">Apellidos:</label>
-        <input type="text" id="apellidos" name="apellidos">
+        <label for="horasclase">Horas Clase :</label>
+        <input type="number" id="horasc" name="horasc" />
         <br />
-        <label> RFC:</label>
-        <input type="text" id="rfc" name="rfc">
+        <label for="horastaller">Horas Taller:</label>
+        <input type="number" id="horast" name="horast">
+        <br />
+        <label for="horaslaboratorio"> Horas Laboratorio:</label>
+        <input type="number" id="horasl" name="horasl">
             <input type="submit" value="Enviar" />
             </form>
             </div>
