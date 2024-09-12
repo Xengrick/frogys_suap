@@ -14,6 +14,7 @@ import mx.desarrollo.entidad.Usuario;
  */
 public class FacadeUsuario {
     
+   /*
     private final DelegateUsuario delegateUsuario;
 
     public FacadeUsuario() {
@@ -26,6 +27,8 @@ public class FacadeUsuario {
      * @param correo
      * @return Regresa usuario si el correo y contrasena con correctos
      */
+    
+    /*
     public Usuario login(String password, String correo){
         return delegateUsuario.login(password, correo);
     }
@@ -34,8 +37,9 @@ public class FacadeUsuario {
      * Metodo de ejemplo para guardar Usuario
      * @param usuario de tipo usuario con id 0 para poder que se cree un id nuevo
      */
+   /*
     public void saveUsario(Usuario usuario){
         delegateUsuario.saveUsario(usuario);
     }
-    
+ */   
 }

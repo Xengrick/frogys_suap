@@ -14,12 +14,12 @@ import mx.desarrollo.entidad.UnidadAprendizaje;
  */
 public class FacadeUnidadAprendizaje {
     
-    //Variables
-    UnidadAprendizaje unidadAprendizaje;
+    // Variables
+    private UnidadAprendizaje unidadAprendizaje;
     
-    private DelegateUnidadAprendizaje delegateUnidadAprendizaje = new DelegateUnidadAprendizaje();
+    private final DelegateUnidadAprendizaje delegateUnidadAprendizaje = new DelegateUnidadAprendizaje();
     
-    public void registrarUnidadAprendizaje(UnidadAprendizaje unidadAprendizaje){
+    public void registrarUnidadAprendizaje(UnidadAprendizaje unidadAprendizaje) {
         this.unidadAprendizaje = unidadAprendizaje;
         delegateUnidadAprendizaje.registrarUnidadAprendizaje(unidadAprendizaje);
     }

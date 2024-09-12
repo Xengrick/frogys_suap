@@ -1,2 +1,4 @@
-mx\desarrollo\entidad\Alumno.class
+mx\desarrollo\entidad\Asignacion.class
+mx\desarrollo\entidad\UnidadAprendizaje.class
+mx\desarrollo\entidad\Profesor.class
 mx\desarrollo\entidad\Usuario.class

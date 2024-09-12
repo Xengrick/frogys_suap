@@ -1,0 +1,4 @@
+mx\desarrollo\helper\LoginHelper.class
+mx\desarrollo\helper\RegistrarHelper.class
+mx\desarrollo\beanUI\RegistrarBeanUI.class
+mx\desarrollo\beanUI\LoginBeanUI.class

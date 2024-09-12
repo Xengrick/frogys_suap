@@ -21,6 +21,8 @@ public class DelegateUsuario {
      * @param correo
      * @return un tipo usuario si no encuntra el usuario sera null
      */
+    
+    /*
     public Usuario login(String password, String correo){
         Usuario usuario = new Usuario();
         List<Usuario> usuarios = ServiceLocator.getInstanceUsuarioDAO().findAll();
@@ -37,8 +39,8 @@ public class DelegateUsuario {
      * Metodo de ejemplo para guardar Usuario
      * @param usuario de tipo usuario con id 0 para poder que se cree un id nuevo
      */
-    public void saveUsario(Usuario usuario){
+   /* public void saveUsario(Usuario usuario){
         ServiceLocator.getInstanceUsuarioDAO().save(usuario);
     }
-    
+   */
 }

@@ -14,6 +14,7 @@ import mx.desarrollo.integracion.ServiceFacadeLocator;
  */
 public class test {
     public static void main(String[] args) {
+       /*
         Usuario usuario = new Usuario();
         
         usuario = ServiceFacadeLocator.getInstanceFacadeUsuario().login("1234","alan@uabc.edu.mx");
@@ -22,6 +23,6 @@ public class test {
             System.out.println("Login exitoso con el correo: " + usuario.getCorreo());
         }else{
             System.out.println("No se encontro registro");
-        }
+        }*/
     }
 }

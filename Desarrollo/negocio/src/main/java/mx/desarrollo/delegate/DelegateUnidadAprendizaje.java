@@ -12,7 +12,11 @@ import mx.desarrollo.integracion.ServiceLocator;
  * @author Be
  */
 public class DelegateUnidadAprendizaje {
-    public void registrarUnidadAprendizaje(UnidadAprendizaje unidadAprendizaje){
+    
+    public DelegateUnidadAprendizaje() {
+    }
+
+    public void registrarUnidadAprendizaje(UnidadAprendizaje unidadAprendizaje) {
         ServiceLocator.getInstanceUnidadAprendizajeDAO().save(unidadAprendizaje);
     }
 }
