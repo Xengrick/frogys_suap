@@ -140,19 +140,19 @@
                 <div class="content">
                     <p:panelGrid columns="2" styleClass="ui-panelgrid-blank form-grid">
                         <h:outputLabel for="identificador" value="ID Profesor(a):" />
-                        <p:inputText id="identificador" value="#{profesorBean.identificador}" />
+                        <p:inputText id="identificador" value="identificador" />
 
                         <h:outputLabel for="nombre" value="Nombre(s):" />
-                        <p:inputText id="nombre" value="#{profesorBean.nombre}" />
+                        <p:inputText id="nombre" value="nombre" />
 
                         <h:outputLabel for="apellidos" value="Apellidos:" />
-                        <p:inputText id="apellidos" value="#{profesorBean.apellidos}" />
+                        <p:inputText id="apellidos" value="apellido" />
 
                         <h:outputLabel for="rfc" value="RFC:" />
-                        <p:inputText id="rfc" value="#{profesorBean.rfc}" />
+                        <p:inputText id="rfc" value="rfc" />
 
                         <h:outputLabel />
-                        <p:commandButton value="Enviar" action="#{profesorBean.procesarFormulario}" styleClass="submit-button" />
+                        <p:commandButton value="Enviar"  styleClass="submit-button" />
                     </p:panelGrid>
                 </div>
             </div>
