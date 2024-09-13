@@ -5,9 +5,10 @@
  */
 package mx.desarrollo.integracion;
 
-import mx.desarrollo.DAO.AlumnoDAO;
+import mx.desarrollo.DAO.AsignacionDAO;
+import mx.desarrollo.DAO.ProfesorDAO;
+import mx.desarrollo.DAO.UnidadaprendizajeDAO;
 import mx.desarrollo.DAO.UsuarioDAO;
-
 
 /**
  *
@@ -15,21 +16,53 @@ import mx.desarrollo.DAO.UsuarioDAO;
  */
 public class ServiceLocator {
     
-    private static AlumnoDAO alumnoDAO;
+    private static AsignacionDAO asignacionDAO;
+    private static ProfesorDAO profesorDAO;
+    private static UnidadaprendizajeDAO unidadaprendizajeDAO;
     private static UsuarioDAO usuarioDAO;
+    
     /**
-     * se crea la instancia para alumno DAO si esta no existe
+     * se crea la instancia de profesorDAO si esta no existe
+     * @return 
      */
-    public static AlumnoDAO getInstanceAlumnoDAO(){
-        if(alumnoDAO == null){
-            alumnoDAO = new AlumnoDAO();
-            return alumnoDAO;
-        } else{
-            return alumnoDAO;
+    public static ProfesorDAO getInstanceProfesorDAO() {
+        if (profesorDAO == null) {
+            profesorDAO = new ProfesorDAO();
+            return profesorDAO;
+        } else {
+            return profesorDAO;
         }
     }
+    
+    /**
+     * se crea la instancia para asignacion DAO si esta no existe
+     */
+    
+    public static AsignacionDAO getInstanceAsignacionDAO(){
+        if(asignacionDAO == null){
+            asignacionDAO = new AsignacionDAO();
+            return asignacionDAO;
+        } else{
+            return asignacionDAO;
+        }
+    }
+    
+    /**
+     * se crea la instancia para unidad aprendizaje DAO si esta no existe
+     */
+    
+    public static UnidadaprendizajeDAO getInstanceUnidadAprendizajeDAO(){
+        if(unidadaprendizajeDAO == null){
+            unidadaprendizajeDAO = new UnidadaprendizajeDAO();
+            return unidadaprendizajeDAO;
+        } else{
+            return unidadaprendizajeDAO;
+        }
+    }
+        
     /**
      * se crea la instancia de usuarioDAO si esta no existe
+     * @return 
      */
     public static UsuarioDAO getInstanceUsuarioDAO(){
         if(usuarioDAO == null){
