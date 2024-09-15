@@ -4,9 +4,9 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>mx.desarrollo.entidad.Alumno</class>
     <class>mx.desarrollo.entidad.Usuario</class>
-    <class>mx.desarrollo.entidad.Unidadaprendizaje</class>
     <class>mx.desarrollo.entidad.Asignacion</class>
     <class>mx.desarrollo.entidad.Profesor</class>
+    <class>mx.desarrollo.entidad.UnidadAprendizaje</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/suap_frogys?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

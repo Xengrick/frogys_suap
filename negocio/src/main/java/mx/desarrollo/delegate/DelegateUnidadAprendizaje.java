@@ -5,7 +5,7 @@
  */
 package mx.desarrollo.delegate;
 
-import mx.desarrollo.entidad.Unidadaprendizaje;
+import mx.desarrollo.entidad.UnidadAprendizaje;
 import mx.desarrollo.integracion.ServiceLocator;
 /**
  *
@@ -40,14 +40,14 @@ public class DelegateUnidadAprendizaje {
             throw new IllegalArgumentException("Debe haber al menos una hora de clase, taller o laboratorio.");
         }
         
-        Unidadaprendizaje UnidadAprendizaje = new Unidadaprendizaje();
+        UnidadAprendizaje UnidadAprendizaje = new UnidadAprendizaje();
         UnidadAprendizaje.setNombre(nombre);
         UnidadAprendizaje.setHorasClase(horasClase);
         UnidadAprendizaje.setHorasTaller(horasTaller);
         UnidadAprendizaje.setHorasLaboratorio(horasLaboratorio);
     }
     
-    public void guardarUnidadAprendizaje(Unidadaprendizaje unidadAprendizaje){
+    public void guardarUnidadAprendizaje(UnidadAprendizaje unidadAprendizaje){
         ServiceLocator.getInstanceUnidadAprendizajeDAO().save(unidadAprendizaje);
     }
 }

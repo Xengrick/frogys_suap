@@ -7,7 +7,7 @@ package mx.desarrollo.delegate;
 
 import mx.desarrollo.entidad.Asignacion;
 import mx.desarrollo.entidad.Profesor;
-import mx.desarrollo.entidad.Unidadaprendizaje;
+import mx.desarrollo.entidad.UnidadAprendizaje;
 import mx.desarrollo.integracion.ServiceLocator;
 
 /**
@@ -23,7 +23,7 @@ public class DelegateAsignacion {
             throw new IllegalArgumentException("El profesor con ID " + idProfesor + " no existe.");
         }
         
-        Unidadaprendizaje unidadAprendizaje = ServiceLocator.getInstanceUnidadAprendizajeDAO().find(idUnidadAprendizaje);
+        UnidadAprendizaje unidadAprendizaje = ServiceLocator.getInstanceUnidadAprendizajeDAO().find(idUnidadAprendizaje);
         if (unidadAprendizaje == null) {
             throw new IllegalArgumentException("La unidad de aprendizaje con ID " + idUnidadAprendizaje + " no existe.");
         }

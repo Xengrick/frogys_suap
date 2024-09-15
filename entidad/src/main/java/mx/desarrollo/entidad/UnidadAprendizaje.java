@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Unidadaprendizaje.findByHorasClase", query = "SELECT u FROM Unidadaprendizaje u WHERE u.horasClase = :horasClase")
     , @NamedQuery(name = "Unidadaprendizaje.findByHorasTaller", query = "SELECT u FROM Unidadaprendizaje u WHERE u.horasTaller = :horasTaller")
     , @NamedQuery(name = "Unidadaprendizaje.findByHorasLaboratorio", query = "SELECT u FROM Unidadaprendizaje u WHERE u.horasLaboratorio = :horasLaboratorio")})
-public class Unidadaprendizaje implements Serializable {
+public class UnidadAprendizaje implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -58,14 +58,14 @@ public class Unidadaprendizaje implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUnidadAprendizaje")
     private List<Asignacion> asignacionList;
 
-    public Unidadaprendizaje() {
+    public UnidadAprendizaje() {
     }
 
-    public Unidadaprendizaje(Integer idUnidadAprendizaje) {
+    public UnidadAprendizaje(Integer idUnidadAprendizaje) {
         this.idUnidadAprendizaje = idUnidadAprendizaje;
     }
 
-    public Unidadaprendizaje(Integer idUnidadAprendizaje, String nombre, int horasClase, int horasTaller, int horasLaboratorio) {
+    public UnidadAprendizaje(Integer idUnidadAprendizaje, String nombre, int horasClase, int horasTaller, int horasLaboratorio) {
         this.idUnidadAprendizaje = idUnidadAprendizaje;
         this.nombre = nombre;
         this.horasClase = horasClase;
@@ -132,10 +132,10 @@ public class Unidadaprendizaje implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Unidadaprendizaje)) {
+        if (!(object instanceof UnidadAprendizaje)) {
             return false;
         }
-        Unidadaprendizaje other = (Unidadaprendizaje) object;
+        UnidadAprendizaje other = (UnidadAprendizaje) object;
         if ((this.idUnidadAprendizaje == null && other.idUnidadAprendizaje != null) || (this.idUnidadAprendizaje != null && !this.idUnidadAprendizaje.equals(other.idUnidadAprendizaje))) {
             return false;
         }

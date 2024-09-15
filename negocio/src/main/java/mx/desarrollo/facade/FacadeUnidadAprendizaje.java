@@ -6,11 +6,11 @@
 package mx.desarrollo.facade;
 
 import mx.desarrollo.delegate.DelegateUnidadAprendizaje;
-import mx.desarrollo.entidad.Unidadaprendizaje;
+import mx.desarrollo.entidad.UnidadAprendizaje;
 
 /**
  *
- * @author Usuario
+ * @author be
  */
 public class FacadeUnidadAprendizaje {
     
@@ -24,7 +24,7 @@ public class FacadeUnidadAprendizaje {
         delegateUnidadAprendizaje.registrarUnidadAprendizaje(nombre, horasClase, horasTaller, horasLaboratorio);
     }
     
-    public void guardarUnidadAprendizaje(Unidadaprendizaje unidadAprendizaje) {
+    public void guardarUnidadAprendizaje(UnidadAprendizaje unidadAprendizaje) {
         delegateUnidadAprendizaje.guardarUnidadAprendizaje(unidadAprendizaje);
     }
     
