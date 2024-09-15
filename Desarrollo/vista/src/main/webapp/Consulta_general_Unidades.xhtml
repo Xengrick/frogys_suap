@@ -1,6 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core"
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       lang="es" xml:lang="es">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -119,42 +121,39 @@
                     <h:outputText value="Profesores" styleClass="titulo" />
                 </div>
                 <p:commandButton value="Inicio" icon="pi pi-home" styleClass="close-btn" />
-               
             </div>
 
             <div class="main">
                 <div class="sidebar">
                     <a href="#">
-                        <img src="agregar.png" alt="Agregar Profesor" />
-                        <h:outputText value="Agregar Profesor" styleClass="titulo"/>
-                    </a>
-                    <a href="#">
                         <img src="consulta.png" alt="Consulta General" />
-                        <h:outputText value="Consulta general" styleClass="titulo"/>
-                    </a>
-                    <a href="#">
-                        <img src="Eliminar.png" alt="Eliminar Profesor" />
-                        <h:outputText value="Eliminar Profesor" styleClass="titulo" />
+                        <h:outputText value="Consulta General" styleClass="titulo" />
                     </a>
                 </div>
 
                 <div class="content">
-                    <p:panelGrid columns="2" styleClass="ui-panelgrid-blank form-grid">
-                        <h:outputLabel for="identificador" value="ID Profesor(a):" />
-                        <p:inputText id="identificador" value="identificador" />
+                    
+                    <p:dataTable var="profesor" value=""
+                                 emptyMessage="No hay Materias Registradas"
+                                 style="width:100%;" >
 
-                        <h:outputLabel for="nombre" value="Nombre(s):" />
-                        <p:inputText id="nombre" value="nombre" />
+                        <!-- Columnas de la tabla -->
+                        <p:column headerText="Nombre">
+                            <h:outputText value="" />
+                        </p:column>
 
-                        <h:outputLabel for="apellidos" value="Apellidos:" />
-                        <p:inputText id="apellidos" value="apellido" />
+                        <p:column headerText="Horas Clase">
+                            <h:outputText value="" />
+                        </p:column>
 
-                        <h:outputLabel for="rfc" value="RFC:" />
-                        <p:inputText id="rfc" value="rfc" />
+                        <p:column headerText="Horas Taller">
+                            <h:outputText value="" />
+                        </p:column>
+                        <p:column headerText="Horas Laboratorio">
+                            <h:outputText value=""/>
+                        </p:column>
 
-                        <h:outputLabel />
-                        <p:commandButton value="Enviar"  styleClass="submit-button" />
-                    </p:panelGrid>
+                    </p:dataTable>
                 </div>
             </div>
         </div>
