@@ -19,6 +19,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>Consulta_general_Unidades.xhtml</welcome-file>
+        <welcome-file>Modificar_Unidades.xhtml</welcome-file>
     </welcome-file-list>
 </web-app>
