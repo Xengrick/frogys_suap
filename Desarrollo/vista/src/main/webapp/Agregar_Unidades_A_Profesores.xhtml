@@ -123,40 +123,44 @@
 <body>
     <h:form>
         <div class="container">
-            <!-- Encabezado -->
             <div class="header">
                 <h1>Gestión de Asignaciones</h1>
-                <p:commandButton value="Inicio" icon="pi pi-home" styleClass="close-btn" />
+                <h:link value="Inicio" outcome="index">
+    <i class="pi pi-home"></i>
+</h:link>
+
             </div>
 
-            <!-- Contenido principal -->
             <div class="main">
-                <!-- Barra lateral -->
                 <div class="sidebar">
-                    <a href="#">
-                        <img src="agregar.png" alt="Agregar Unidad" />
-                        <h:outputText value="Agregar Unidad a profesores" />
-                    </a>
-                    <a href="#">
-                        <img src="consulta.png" alt="Consulta General" />
-                        <h:outputText value="Consulta General" />
-                    </a>
-                    <a href="#">
-                        <img src="editar.png" alt="Modificación" />
-                        <h:outputText value="Modificación a Profesor(a)" />
-                    </a>
-                    <a href="#">
-                        <img src="eliminar.png" alt="Eliminar Unidad" />
-                        <h:outputText value="Eliminar Unidad" />
-                    </a>
+                     <h:link value="Agregar Unidad a profesores" outcome="Agregar_Unidades_A_Profesores">
+                                                <img src="agregar.png" alt="Agregar Materia" />
+
+                           <i class="pi pi-home"></i>
+                           </h:link>
+                      
+                        <h:link value="Cosnulta General" outcome="Consulta_general_Unidades">
+                              <img src="consulta.png" alt="Consulta General" />
+                         <i class="pi pi-home"></i>
+                        </h:link>
+
+                 
+                       <h:link value="Modificacion a Profesores" outcome="Modificacion_A_Profesores">
+                           <img src="Editar.png"/>
+                          <i class="pi pi-home"></i>
+                          </h:link>
+
+                    <h:link value="Eliminar Unidades Academicas" outcome="Eliminar_Unidades">
+                         <img src="Eliminar.png" alt="Eliminar Materia" />
+                       <i class="pi pi-home"></i>
+                     </h:link>
+
                 </div>
 
-                <!-- Panel de Gestión de Asignaciones -->
                 <div class="content">
                     <h2>Gestión de Asignaciones</h2>
 
                     <div class="form-grid">
-                        <!-- Seleccionar Profesor -->
                         <div class="select-container">
                             <label for="selectProfesor">Seleccionar Profesor(a):</label>
                             <select id="selectProfesor">
@@ -166,7 +170,6 @@
                             </select>
                         </div>
 
-                        <!-- Seleccionar Unidad -->
                         <div class="select-container">
                             <label for="selectUnidad">Seleccionar Unidad:</label>
                             <select id="selectUnidad">

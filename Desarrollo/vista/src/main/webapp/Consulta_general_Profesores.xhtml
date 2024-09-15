@@ -120,15 +120,31 @@
                     <img src="profesores.png" alt="icono-profesores" />
                     <h:outputText value="Profesores" styleClass="titulo" />
                 </div>
-                <p:commandButton value="Inicio" icon="pi pi-home" styleClass="close-btn" />
+<h:link value="Inicio" outcome="index">
+    <i class="pi pi-home"></i>
+</h:link>
             </div>
 
             <div class="main">
                 <div class="sidebar">
-                    <a href="#">
-                        <img src="consulta.png" alt="Consulta General" />
-                        <h:outputText value="Consulta General" styleClass="titulo" />
-                    </a>
+                     
+                        <h:link value="Agregar Profesores" outcome="gestionprofesores">
+                                                 <img src="agregar.png" alt="Agregar Profesor" />
+                         <i class="pi pi-home"></i>
+                        </h:link>
+
+                       <h:link value="Consulta General" outcome="Consulta_general_Profesores">
+                                                   <img src="consulta.png" alt="Consulta General" />
+                            <i class="pi pi-home"></i>
+                        </h:link>
+
+              
+                         <h:link value="Eliminar Profesores" outcome="Elminar_Profesores">
+                                                     <img src="Eliminar.png" alt="Eliminar Profesor" />
+
+                            <i class="pi pi-home"></i>
+                        </h:link>
+
                 </div>
 
                 <div class="content">

@@ -25,10 +25,12 @@
         .header {
             background-color: #ffebaf;
             width: 100%;
-            height: 200px;
+            height: 80px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             border-bottom: 1px solid #ccc;
+            padding: 0 20px;
         }
 
         .header img {
@@ -85,6 +87,7 @@
             flex-grow: 1;
             padding: 20px;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             background-color: #f1f1f1;
@@ -94,6 +97,35 @@
         .content h2 {
             font-size: 24px;
             color: #666;
+            margin-bottom: 20px;
+        }
+
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            margin-bottom: 20px;
+        }
+
+        .table th, .table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .table th {
+            background-color: #ffebaf;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
         }
 
         button {
@@ -108,6 +140,14 @@
         button:hover {
             background-color: #0056b3;
         }
+
+        .delete-btn {
+            background-color: #dc3545;
+        }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
     </style>
 </head>
 <body>
@@ -118,54 +158,67 @@
                     <img src="profesores.png" alt="icono-profesores" />
                     <h:outputText value="Profesores" styleClass="titulo" />
                 </div>
-<h:link value="Inicio" outcome="index">
-    <i class="pi pi-home"></i>
-</h:link>
-               
+                <h:link value="Inicio" outcome="index">
+                    <i class="pi pi-home"></i>
+                </h:link>
             </div>
 
             <div class="main">
                 <div class="sidebar">
-                       <h:link value="Agregar Unidad a profesores" outcome="Agregar_Unidades_A_Profesores">
-                                                <img src="agregar.png" alt="Agregar Materia" />
-
-                           <i class="pi pi-home"></i>
-                           </h:link>
-                      
-                        <h:link value="Cosnulta General" outcome="Consulta_general_Unidades">
-                              <img src="consulta.png" alt="Consulta General" />
+                  <h:link value="Agregar Profesores" outcome="gestionprofesores">
+                                                 <img src="agregar.png" alt="Agregar Profesor" />
                          <i class="pi pi-home"></i>
                         </h:link>
 
-                 
-                       <h:link value="Modificacion a Profesores" outcome="Modificacion_A_Profesores">
-                           <img src="Editar.png"/>
-                          <i class="pi pi-home"></i>
-                          </h:link>
+                       <h:link value="Consulta General" outcome="Consulta_general_Profesores">
+                                                   <img src="consulta.png" alt="Consulta General" />
+                            <i class="pi pi-home"></i>
+                        </h:link>
 
-                    <h:link value="Eliminar Unidades Academicas" outcome="Eliminar_Unidades">
-                         <img src="Eliminar.png" alt="Eliminar Materia" />
-                       <i class="pi pi-home"></i>
-                     </h:link>
+              
+                         <h:link value="Eliminar Profesores" outcome="Elminar_Profesores">
+                                                     <img src="Eliminar.png" alt="Eliminar Profesor" />
+
+                            <i class="pi pi-home"></i>
+                        </h:link>
 
                 </div>
 
                 <div class="content">
-                    <p:panelGrid columns="2" styleClass="ui-panelgrid-blank form-grid">
-                    
+                    <h2>Profesores Registrados</h2>
 
-                        <h:outputLabel for="nombre" value="Nombre" />
-                        <p:inputText id="nombre" value="" />
+                    <div class="table-wrapper">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre y apellidos</th>
+                                    <th>RFC</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Juan Pérez</td>
+                                    <td>ABC123</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>María López</td>
+                                    <td>XYZ456</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-                        <h:outputLabel for="Horas Clase" value="Horas Clase" />
-                        <p:inputText id="horasc" value="" />
-
-                        <h:outputLabel for="Horas Taller" value="Horas Taller" />
-                        <p:inputText id="horast" value="" />
-                        <h:outputLabel for="Horas Laboratorio" value="Horas Laboratorio"/>
-                        <p:inputText id="horasl" value=""/>
-                        <p:commandButton value="Enviar"  styleClass="submit-button" />
-                    </p:panelGrid>
+                    <div class="buttons">
+                        <button>
+                            <i class="pi pi-arrow-left"></i> Atrás
+                        </button>
+                        <button class="delete-btn">
+                            <i class="pi pi-trash"></i> Eliminar
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
