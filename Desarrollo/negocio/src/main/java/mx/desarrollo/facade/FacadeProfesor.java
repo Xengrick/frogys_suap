@@ -5,10 +5,27 @@
  */
 package mx.desarrollo.facade;
 
+import mx.desarrollo.delegate.DelegateProfesor;
+import mx.desarrollo.entidad.Profesor;
+
 /**
  *
- * @author Be
+ * @author Usuario
  */
 public class FacadeProfesor {
     
+    private final DelegateProfesor delegateProfesor;
+
+    public FacadeProfesor() {
+        this.delegateProfesor = new DelegateProfesor();
+    }
+
+    public Profesor registrarProfesor(String nombre, String apellido, String rfc) {
+        return delegateProfesor.registrarProfesor(nombre, apellido, rfc);
+    }
+
+    public void guardarProfesor(Profesor profesor) {
+        delegateProfesor.guardarProfesor(profesor);
+    }
+
 }

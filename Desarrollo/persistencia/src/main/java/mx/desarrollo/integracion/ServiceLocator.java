@@ -7,9 +7,8 @@ package mx.desarrollo.integracion;
 
 import mx.desarrollo.DAO.AsignacionDAO;
 import mx.desarrollo.DAO.ProfesorDAO;
-import mx.desarrollo.DAO.UnidadAprendizajeDAO;
+import mx.desarrollo.DAO.UnidadaprendizajeDAO;
 import mx.desarrollo.DAO.UsuarioDAO;
-
 
 /**
  *
@@ -17,18 +16,20 @@ import mx.desarrollo.DAO.UsuarioDAO;
  */
 public class ServiceLocator {
     
+    private static AsignacionDAO asignacionDAO;
     private static ProfesorDAO profesorDAO;
-    private static UnidadAprendizajeDAO unidadAprendizajeDAO;
-    private static AsignacionDAO AsignacionDAO;
+    private static UnidadaprendizajeDAO unidadaprendizajeDAO;
     private static UsuarioDAO usuarioDAO;
+    
     /**
-     * se crea la instancia para profesor DAO si esta no existe
+     * se crea la instancia de profesorDAO si esta no existe
+     * @return 
      */
-    public static ProfesorDAO getInstanceProfesorDAO(){
-        if(profesorDAO == null){
+    public static ProfesorDAO getInstanceProfesorDAO() {
+        if (profesorDAO == null) {
             profesorDAO = new ProfesorDAO();
             return profesorDAO;
-        } else{
+        } else {
             return profesorDAO;
         }
     }
@@ -38,11 +39,11 @@ public class ServiceLocator {
      */
     
     public static AsignacionDAO getInstanceAsignacionDAO(){
-        if(AsignacionDAO == null){
-            AsignacionDAO = new AsignacionDAO();
-            return AsignacionDAO;
+        if(asignacionDAO == null){
+            asignacionDAO = new AsignacionDAO();
+            return asignacionDAO;
         } else{
-            return AsignacionDAO;
+            return asignacionDAO;
         }
     }
     
@@ -50,17 +51,18 @@ public class ServiceLocator {
      * se crea la instancia para unidad aprendizaje DAO si esta no existe
      */
     
-    public static UnidadAprendizajeDAO getInstanceUnidadAprendizajeDAO(){
-        if(unidadAprendizajeDAO == null){
-            unidadAprendizajeDAO = new UnidadAprendizajeDAO();
-            return unidadAprendizajeDAO;
+    public static UnidadaprendizajeDAO getInstanceUnidadAprendizajeDAO(){
+        if(unidadaprendizajeDAO == null){
+            unidadaprendizajeDAO = new UnidadaprendizajeDAO();
+            return unidadaprendizajeDAO;
         } else{
-            return unidadAprendizajeDAO;
+            return unidadaprendizajeDAO;
         }
     }
-    
+        
     /**
      * se crea la instancia de usuarioDAO si esta no existe
+     * @return 
      */
     public static UsuarioDAO getInstanceUsuarioDAO(){
         if(usuarioDAO == null){
