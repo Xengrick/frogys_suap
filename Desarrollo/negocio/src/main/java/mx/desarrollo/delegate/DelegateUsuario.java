@@ -17,18 +17,18 @@ public class DelegateUsuario {
     
     /**
      * Metodo para verificar si el usuario esta registrado en la bd
-     * @param password 
-     * @param correo
+     * @param clave 
+     * @param nombreUsuario
      * @return un tipo usuario si no encuntra el usuario sera null
      */
     
-    /*
-    public Usuario login(String password, String correo){
+    
+    public Usuario login(String clave, String nombreUsuario){
         Usuario usuario = new Usuario();
         List<Usuario> usuarios = ServiceLocator.getInstanceUsuarioDAO().findAll();
         
         for(Usuario us:usuarios){
-            if(us.getContrasena().equalsIgnoreCase(password) && us.getCorreo().equalsIgnoreCase(correo)){
+            if(us.getClave().equalsIgnoreCase(clave) && us.getNombreUsuario().equalsIgnoreCase(nombreUsuario)){
                 usuario = us;
             }
         }

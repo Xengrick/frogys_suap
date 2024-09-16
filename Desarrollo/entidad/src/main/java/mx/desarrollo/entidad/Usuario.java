@@ -27,8 +27,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u")
     , @NamedQuery(name = "Usuario.findByIdUsuario", query = "SELECT u FROM Usuario u WHERE u.idUsuario = :idUsuario")
-    , @NamedQuery(name = "Usuario.findByUsuario", query = "SELECT u FROM Usuario u WHERE u.usuario = :usuario")
-    , @NamedQuery(name = "Usuario.findByContrasena", query = "SELECT u FROM Usuario u WHERE u.contrasena = :contrasena")
+    , @NamedQuery(name = "Usuario.findByNombreUsuario", query = "SELECT u FROM Usuario u WHERE u.nombreUsuario = :nombreUsuario")
+    , @NamedQuery(name = "Usuario.findByClave", query = "SELECT u FROM Usuario u WHERE u.clave = :clave")
     , @NamedQuery(name = "Usuario.findByRol", query = "SELECT u FROM Usuario u WHERE u.rol = :rol")})
 public class Usuario implements Serializable {
 
@@ -39,11 +39,11 @@ public class Usuario implements Serializable {
     @Column(name = "idUsuario")
     private Integer idUsuario;
     @Basic(optional = false)
-    @Column(name = "usuario")
-    private String usuario;
+    @Column(name = "nombreUsuario")
+    private String nombreUsuario;
     @Basic(optional = false)
-    @Column(name = "contrasena")
-    private String contrasena;
+    @Column(name = "clave")
+    private String clave;
     @Basic(optional = false)
     @Column(name = "rol")
     private String rol;
@@ -55,10 +55,10 @@ public class Usuario implements Serializable {
         this.idUsuario = idUsuario;
     }
 
-    public Usuario(Integer idUsuario, String usuario, String contrasena, String rol) {
+    public Usuario(Integer idUsuario, String nombreUsuario, String clave, String rol) {
         this.idUsuario = idUsuario;
-        this.usuario = usuario;
-        this.contrasena = contrasena;
+        this.nombreUsuario = nombreUsuario;
+        this.clave = clave;
         this.rol = rol;
     }
 
@@ -70,20 +70,20 @@ public class Usuario implements Serializable {
         this.idUsuario = idUsuario;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
-    public String getContrasena() {
-        return contrasena;
+    public String getClave() {
+        return clave;
     }
 
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 
     public String getRol() {

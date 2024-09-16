@@ -21,7 +21,7 @@ public class test {
         listaUsuarios = usuarioDao.findAll();
         
         for(Usuario us : listaUsuarios){
-            System.out.println("usuario: " + us.getUsuario() + " " + us.getContrasena());
+            System.out.println("usuario: " + us.getNombreUsuario()+ " " + us.getClave());
         }
     }
 }

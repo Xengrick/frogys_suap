@@ -14,7 +14,7 @@ import mx.desarrollo.entidad.Usuario;
  */
 public class FacadeUsuario {
     
-   /*
+   
     private final DelegateUsuario delegateUsuario;
 
     public FacadeUsuario() {
@@ -23,14 +23,14 @@ public class FacadeUsuario {
     
      /**
      * Metodo para verificar si el usuario esta registrado en la bd
-     * @param password 
-     * @param correo
+     * @param clave 
+     * @param usuarioNombre
      * @return Regresa usuario si el correo y contrasena con correctos
      */
     
-    /*
-    public Usuario login(String password, String correo){
-        return delegateUsuario.login(password, correo);
+    
+    public Usuario login(String clave, String nombreUsuario){
+        return delegateUsuario.login(clave, nombreUsuario);
     }
     
     /**
