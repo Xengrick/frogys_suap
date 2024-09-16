@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gestión de Profesores</title>
+    <title>Gestión de Unidades de Aprendizaje</title>
     <style type="text/css">
         body {
             font-family: Arial, sans-serif;
@@ -15,11 +15,9 @@
         }
 
         .container {
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #fff;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         .header {
@@ -27,51 +25,40 @@
             width: 100%;
             height: 80px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             border-bottom: 1px solid #ccc;
-            padding: 0 20px;
-        }
-
-        .header img {
-            height: 40px;
         }
 
         .header h1 {
             font-size: 24px;
             margin: 0;
-            font-weight: normal;
-        }
-
-        .close-btn {
-            background-color: #fff;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-            margin-right: 10px;
+            font-weight: bold;
         }
 
         .main {
             display: flex;
             margin-top: 20px;
+            gap: 20px;
         }
 
         .sidebar {
-            width: 200px;
+            width: 250px;
             background-color: #fff;
-            border-right: 1px solid #ccc;
             padding: 20px;
+            border-right: 1px solid #ccc;
         }
 
         .sidebar a {
             display: flex;
             align-items: center;
-            padding: 10px;
-            margin-bottom: 10px;
+            padding: 12px;
+            margin-bottom: 12px;
             text-decoration: none;
             color: black;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            font-size: 16px;
         }
 
         .sidebar a:hover {
@@ -79,25 +66,23 @@
         }
 
         .sidebar img {
-            height: 20px;
-            margin-right: 10px;
+            height: 24px;
+            margin-right: 12px;
         }
 
         .content {
             flex-grow: 1;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #f1f1f1;
+            background-color: #fff;
             border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
 
         .content h2 {
-            font-size: 24px;
-            color: #666;
+            font-size: 28px;
+            color: #333;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         .table-wrapper {
@@ -108,33 +93,48 @@
         .table {
             width: 100%;
             border-collapse: collapse;
-            background-color: white;
+            background-color: #fff;
+            border-radius: 5px;
+            overflow: hidden;
             margin-bottom: 20px;
         }
 
         .table th, .table td {
-            padding: 10px;
+            padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ccc;
         }
 
         .table th {
             background-color: #ffebaf;
+            font-weight: bold;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f9f9f9;
         }
 
         .buttons {
             display: flex;
             justify-content: space-between;
-            width: 100%;
+            align-items: center;
         }
 
         button {
-            padding: 10px 20px;
+            padding: 12px 24px;
+            font-size: 16px;
             background-color: #007BFF;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        button i {
+            margin-right: 8px;
         }
 
         button:hover {
@@ -148,44 +148,41 @@
         .delete-btn:hover {
             background-color: #c82333;
         }
+
+        .back-btn {
+            background-color: #28a745;
+        }
+
+        .back-btn:hover {
+            background-color: #218838;
+        }
+
     </style>
 </head>
 <body>
     <h:form>
         <div class="container">
             <div class="header">
-                <div class="title-section">
-                    <img src="profesores.png" alt="icono-profesores" />
-                    <h:outputText value="Profesores" styleClass="titulo" />
-                </div>
-                <h:link value="Inicio" outcome="index">
-                    <i class="pi pi-home"></i>
-                </h:link>
+                <h1>Gestión de Unidades de Aprendizaje</h1>
             </div>
 
             <div class="main">
                 <div class="sidebar">
-                  <h:link value="Agregar Profesores" outcome="gestionprofesores">
-                                                 <img src="agregar.png" alt="Agregar Profesor" />
-                         <i class="pi pi-home"></i>
-                        </h:link>
+                    <h:link value="Agregar Unidad" outcome="agregar_unidad">
+                        <img src="agregar.png" alt="Agregar Unidad" /> Agregar Unidad
+                    </h:link>
 
-                       <h:link value="Consulta General" outcome="Consulta_general_Profesores">
-                                                   <img src="consulta.png" alt="Consulta General" />
-                            <i class="pi pi-home"></i>
-                        </h:link>
+                    <h:link value="Consulta General" outcome="consulta_general">
+                        <img src="consulta.png" alt="Consulta General" /> Consulta General
+                    </h:link>
 
-              
-                         <h:link value="Eliminar Profesores" outcome="Elminar_Profesores">
-                                                     <img src="Eliminar.png" alt="Eliminar Profesor" />
-
-                            <i class="pi pi-home"></i>
-                        </h:link>
-
+                    <h:link value="Eliminar Unidad" outcome="eliminar_unidad">
+                        <img src="eliminar.png" alt="Eliminar Unidad" /> Eliminar Unidad
+                    </h:link>
                 </div>
 
                 <div class="content">
-                    <h2>Profesores Registrados</h2>
+                    <h2>Profesores registrados</h2>
 
                     <div class="table-wrapper">
                         <table class="table">
@@ -212,7 +209,7 @@
                     </div>
 
                     <div class="buttons">
-                        <button>
+                        <button class="back-btn">
                             <i class="pi pi-arrow-left"></i> Atrás
                         </button>
                         <button class="delete-btn">
