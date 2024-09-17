@@ -14,36 +14,12 @@ import mx.desarrollo.facade.FacadeUsuario;
 
 public class ServiceFacadeLocator {
     
-    private static FacadeProfesor facadeProfesor;
     private static FacadeUsuario facadeUsuario;
     private static FacadeUnidadAprendizaje facadeUnidadAprendizaje;
-    private static FacadeAsignacion facadeAsignacion;
-    
-    public static FacadeProfesor getInstanceFacadeProfesor() {
-        if (facadeProfesor == null) {
-            facadeProfesor = new FacadeProfesor();
-            return facadeProfesor;
-        } else {
-            return facadeProfesor;
-        }
-    }
-    
+
     public static FacadeUnidadAprendizaje getInstanceFacadeUnidadAprendizaje() {
-        if (facadeUnidadAprendizaje == null) {
-            facadeUnidadAprendizaje = new FacadeUnidadAprendizaje();
-            return facadeUnidadAprendizaje;
-        } else {
-            return facadeUnidadAprendizaje;
-        }
-    }
-    
-    public static FacadeAsignacion getInstanceFacadeAsignacion() {
-        if (facadeAsignacion == null) {
-            facadeAsignacion = new FacadeAsignacion();
-            return facadeAsignacion;
-        } else {
-            return facadeAsignacion;
-        }
+    if (facadeUnidadAprendizaje == null) {
+        facadeUnidadAprendizaje = new FacadeUnidadAprendizaje();
     }
     return facadeUnidadAprendizaje;
 }

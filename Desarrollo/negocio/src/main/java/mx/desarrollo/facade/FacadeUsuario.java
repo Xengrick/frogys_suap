@@ -23,12 +23,14 @@ public class FacadeUsuario {
     
      /**
      * Metodo para verificar si el usuario esta registrado en la bd
-     * @param nombre 
-     * @param contrasena
+     * @param clave 
+     * @param usuarioNombre
      * @return Regresa usuario si el correo y contrasena con correctos
      */
-    public Usuario login(String nombre, String contrasena){
-        return delegateUsuario.login(nombre, contrasena);
+    
+    
+    public Usuario login(String clave, String nombreUsuario){
+        return delegateUsuario.login(clave, nombreUsuario);
     }
     
     /**

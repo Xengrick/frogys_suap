@@ -4,11 +4,13 @@
  * and open the template in the editor.
  */
 package mx.desarrollo.DAO;
+
 import mx.desarrollo.entidad.Usuario;
 import mx.desarrollo.persistencia.AbstractDAO;
+
 /**
  *
- * @author Usuario
+ * @author total
  */
 public class UsuarioDAO extends AbstractDAO<Integer, Usuario>{
     

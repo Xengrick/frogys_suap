@@ -5,27 +5,10 @@
  */
 package mx.desarrollo.facade;
 
-import mx.desarrollo.delegate.DelegateAsignacion;
-import mx.desarrollo.entidad.Asignacion;
-
 /**
  *
- * @author Usuario
+ * @author Be
  */
 public class FacadeAsignacion {
-    private final DelegateAsignacion delegateAsignacion;
-
-    public FacadeAsignacion() {
-        this.delegateAsignacion = new DelegateAsignacion();
-    }
-
-    public Asignacion registrarAsignacion(int idProfesor, int idUnidadAprendizaje) {
-        return delegateAsignacion.registrarAsignacion(idProfesor, idUnidadAprendizaje);
-    }
-    
-    public void guardarAsignacion(Asignacion asignacion) {
-        delegateAsignacion.guardarAsignacion(asignacion);
-    }
-    
     
 }
