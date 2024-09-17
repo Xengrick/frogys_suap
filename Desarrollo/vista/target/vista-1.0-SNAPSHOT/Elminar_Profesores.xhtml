@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestión de Unidades de Aprendizaje</title>
     <style type="text/css">
-       body {
+      body {
             font-family: Arial, sans-serif;
             background-color: #f7f7f7;
             margin: 0;
@@ -30,6 +30,9 @@
             border-bottom: 1px solid #ccc;
             justify-content: space-between;
             
+        }
+         .header img {
+            height: 40px;
         }
         .header h1 {
             font-size: 24px;
@@ -164,7 +167,12 @@
     <h:form>
         <div class="container">
             <div class="header">
-                <h1>Gestión de Unidades de Aprendizaje</h1>
+                <img src="profesores.png"/>
+                <h1>Profesores</h1>
+                 <h:link value="Inicio" outcome="index">
+    <i class="pi pi-home"></i>
+</h:link>
+
             </div>
 
             <div class="main">

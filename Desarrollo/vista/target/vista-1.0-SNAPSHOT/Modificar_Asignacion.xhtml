@@ -9,29 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestión de Unidades de Aprendizaje</title>
     <style type="text/css">
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #fff;
-        }
-
-        .header {
-            background-color: #ffebaf;
-            width: 100%;
-            height: 200px;
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #ccc;
-        body {
+     body {
             font-family: Arial, sans-serif;
             background-color: #f7f7f7;
             margin: 0;
@@ -156,27 +134,27 @@
                     <img src="unidades.png" alt="icono-unidades" />
                     <h:outputText value="Unidades de aprendizaje" styleClass="titulo" />
                 </div>
-                <p:commandButton value="Inicio" icon="pi pi-home" styleClass="close-btn" />
+                     <h:link value="Inicio" outcome="index">
+    <i class="pi pi-home"></i>
+</h:link>
+
             </div>
 
             <div class="main">
                 <div class="sidebar">
-                    <a href="#">
-                        <img src="agregar.png" alt="Agregar Unidad" />
-                        <h:outputText value="Agregar Unidad" styleClass="titulo" />
-                    </a>
-                    <a href="#">
-                        <img src="consulta.png" alt="Consulta General" />
-                        <h:outputText value="Consulta General" styleClass="titulo" />
-                    </a>
-                    <a href="#">
-                        <img src="Editar.png" alt="Modificación" />
-                        <h:outputText value="Modificación" styleClass="titulo" />
-                    </a>
-                    <a href="#">
-                        <img src="Eliminar.png" alt="Eliminar Unidad" />
-                        <h:outputText value="Eliminar Unidad" styleClass="titulo" />
-                    </a>
+                      <h:link value="Agregar Nueva Unidad" outcome="gestionmaterias">
+                        <img src="agregar.png" alt="Agregar Materia" />
+                     <i class="pi pi-home"></i>
+                    </h:link>
+                         <h:link value="Modificar unidades" outcome="Modificar_Unidades">
+                             <img src="Editar.png"/>
+                         <i class="pi pi-home"></i>
+                        </h:link>
+                              
+                    <h:link value="Eliminar Unidades Academicas" outcome="Eliminar_Unidad">
+                         <img src="Eliminar.png" alt="Eliminar Materia" />
+                       <i class="pi pi-home"></i>
+                     </h:link>
                 </div>
 
                 <div class="content">

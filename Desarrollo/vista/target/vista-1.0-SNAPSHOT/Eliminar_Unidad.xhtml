@@ -4,7 +4,8 @@
       xmlns:p="http://primefaces.org/ui">
 <h:head>
     <title>Gestión de Unidades de Aprendizaje</title>
-    <style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css">
         body {
             font-family: Arial, sans-serif;
             background-color: #f7f7f7;
@@ -13,75 +14,85 @@
         }
 
         .container {
-             flex-direction: column;
+            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
             background-color: #fff;
         }
+
         .header {
-             background-color: #ffebaf;
+            background-color: #ffebaf;
             width: 100%;
             height: 80px;
             display: flex;
             align-items: center;
-            border-bottom: 1px solid #ccc;
             justify-content: space-between;
-            
+            padding: 0 20px;
+            border-bottom: 1px solid #ccc;
         }
-        .layout {
+
+        .header img {
+            height: 40px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        /* Main layout adjustments */
+        .main {
             display: flex;
-            height: 100vh;
+            width: 100%;
+            height: calc(100vh - 80px); /* Adjust height minus header */
         }
 
-      
-       
-
-        .sidebar h3 {
-            font-size: 18px;
-            margin-bottom: 30px;
-            text-align: left;
-            font-weight: bold;
+        .sidebar {
+            width: 250px;
+            background-color: #fff;
+            border-right: 1px solid #ccc;
+            padding: 20px;
         }
 
         .sidebar a {
             display: flex;
             align-items: center;
-            padding: 12px;
+            padding: 10px;
+            margin-bottom: 10px;
             text-decoration: none;
             color: black;
             border-radius: 5px;
             transition: background-color 0.3s ease;
-            font-size: 16px;
         }
 
         .sidebar a:hover {
-            background-color: #E0E0E0;
+            background-color: #f0f0f0;
         }
 
         .sidebar img {
-            height: 24px;
+            height: 20px;
             margin-right: 10px;
         }
 
-        /* Main content */
         .content {
             flex-grow: 1;
             padding: 20px;
-            background-color: #FFF;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            margin-left: 20px;
         }
 
-        .header-panel {
-            text-align: center;
+        .content h2 {
             font-size: 24px;
-            margin-bottom: 20px;
-            font-weight: bold;
-            color: black;
+            color: #666;
         }
 
+        /* Styling the table */
         .profesor-table {
             width: 100%;
             border-collapse: collapse;
@@ -136,59 +147,55 @@
 </h:head>
 <h:body>
     <h:form>
-        <div class="layout">
-            <!-- Barra lateral -->
-            <div class="sidebar">
-                <h3>Unidades de aprendizaje</h3>
-                <h:commandLink action="agregarUnidad">
-                    <img src="agregar.png" alt="Agregar Unidad" />
-                    <span>Agregar Unidad</span>
-                </h:commandLink>
-                <h:commandLink action="consultaGeneral">
-                    <img src="consulta.png" alt="Consulta General" />
-                    <span>Consulta General</span>
-                </h:commandLink>
-                <h:commandLink action="modificacion">
-                    <img src="modificar.png" alt="Modificación" />
-                    <span>Modificación</span>
-                </h:commandLink>
-                <h:commandLink action="eliminarUnidad">
-                    <img src="basura.png" alt="Eliminar Unidad" />
-                    <span>Eliminar Unidad</span>
-                </h:commandLink>
+        <div class="container">
+            <div class="header">
+                <h1>Gestión de Unidades de Aprendizaje</h1>
+                <h:link value="Inicio" outcome="index">
+                    <i class="pi pi-home"></i>
+                </h:link>
             </div>
-
-            <div class="content">
-                <div class="header-panel">
-                    Gestión de Unidades de Aprendizaje
+            <div class="main">
+                <div class="sidebar">
+                    <h:link value="Agregar Nueva Unidad" outcome="gestionmaterias">
+                        <img src="agregar.png" alt="Agregar Materia" />
+                        Agregar Unidad
+                    </h:link>
+                    <h:link value="Consulta General" outcome="Consulta_general_Unidades">
+                        <img src="consulta.png" alt="Consulta General" />
+                        Consulta General
+                    </h:link>
+                    <h:link value="Eliminar Unidad Académica" outcome="Eliminar_Unidad">
+                        <img src="Eliminar.png" alt="Eliminar Materia" />
+                        Eliminar Unidad
+                    </h:link>
                 </div>
-                <p:panel header="Profesores registrados">
-                    <table class="profesor-table">
-                        <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Nombre y apellidos</th>
-                                <th>RFC</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>#{profesor.id}</td>
-                                <td>#{profesor.nombreCompleto}</td>
-                                <td>#{profesor.rfc}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </p:panel>
-
-               
-                <div class="action-buttons">
-                    <button class="back-button">
-                        <img src="atras.png" alt="Atrás" /> Atrás
-                    </button>
-                    <button class="delete-button">
-                        <img src="eliminar.png" alt="Eliminar" /> Eliminar
-                    </button>
+                <div class="content">
+                    <p:panel header="Profesores registrados">
+                        <table class="profesor-table">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre y apellidos</th>
+                                    <th>RFC</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#{profesor.id}</td>
+                                    <td>#{profesor.nombreCompleto}</td>
+                                    <td>#{profesor.rfc}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </p:panel>
+                    <div class="action-buttons">
+                        <button class="back-button">
+                            <img src="atras.png" alt="Atrás" /> Atrás
+                        </button>
+                        <button class="delete-button">
+                            <img src="eliminar.png" alt="Eliminar" /> Eliminar
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

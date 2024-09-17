@@ -16,23 +16,21 @@
         }
 
         .container {
-            display: flex;
-            flex-direction: column;
+             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
             background-color: #fff;
         }
-
         .header {
-            background-color: #ffebaf;
+             background-color: #ffebaf;
             width: 100%;
-            height: 100px;
+            height: 80px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
             border-bottom: 1px solid #ccc;
+            justify-content: space-between;
+            
         }
 
         .header h1 {
@@ -156,24 +154,15 @@
 
             <div class="main">
                 <div class="sidebar">
-                     <h:link value="Agregar Unidad a profesores" outcome="Agregar_Unidades_A_Profesores">
-                                                <img src="agregar.png" alt="Agregar Materia" />
-
+                    <h:link value="Agregar Unidad a profesores" outcome="Agregar_Unidades_A_Profesores">
+                             <img src="agregar.png" alt="Agregar Materia" />
                            <i class="pi pi-home"></i>
                            </h:link>
-                      
-                        <h:link value="Cosnulta General" outcome="Consulta_general_Unidades">
-                              <img src="consulta.png" alt="Consulta General" />
-                         <i class="pi pi-home"></i>
-                        </h:link>
-
-                 
-                       <h:link value="Modificacion a Profesores" outcome="Modificacion_A_Profesores">
+                        <h:link value="Modificacion a Profesores" outcome="Modificacion_A_Profesores">
                            <img src="Editar.png"/>
                           <i class="pi pi-home"></i>
-                          </h:link>
-
-                    <h:link value="Eliminar Unidades Academicas" outcome="Eliminar_Unidades">
+                        </h:link>
+                    <h:link value="Eliminar Unidades Academicas" outcome="Eliminar_Asignacion">
                          <img src="Eliminar.png" alt="Eliminar Materia" />
                        <i class="pi pi-home"></i>
                      </h:link>
