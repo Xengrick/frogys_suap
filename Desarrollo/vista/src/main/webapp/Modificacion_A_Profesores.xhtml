@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      lang="es" xml:lang="es">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Asignaciones</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #fff;
+        }
+
+        .header {
+            background-color: #ffebaf;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .close-btn {
+            background-color: #fff;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .main {
+            display: flex;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #fff;
+            border-right: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: black;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .sidebar img {
+            width: 30px; /* Cambia este valor para hacer las imágenes más pequeñas */
+            height: 30px; /* Cambia este valor para hacer las imágenes más pequeñas */
+            margin-right: 10px;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .form-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+        }
+
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</h:head>
+<body>
+    <h:form>
+        <div class="container">
+            <div class="header">
+                <h1>Gestión de Asignaciones</h1>
+                <p:commandButton value="Inicio" icon="pi pi-home" styleClass="close-btn" />
+            </div>
+
+            <div class="main">
+                
+                <div class="sidebar">
+                      <h:link value="Agregar Unidad a profesores" outcome="Agregar_Unidades_A_Profesores">
+                                                <img src="agregar.png" alt="Agregar Materia" />
+
+                           <i class="pi pi-home"></i>
+                           </h:link>
+                      
+                        <h:link value="Cosnulta General" outcome="Consulta_general_Unidades">
+                              <img src="consulta.png" alt="Consulta General" />
+                         <i class="pi pi-home"></i>
+                        </h:link>
+
+                 
+                       <h:link value="Modificacion a Profesores" outcome="Modificacion_A_Profesores">
+                           <img src="Editar.png"/>
+                          <i class="pi pi-home"></i>
+                          </h:link>
+
+                    <h:link value="Eliminar Unidades Academicas" outcome="Eliminar_Unidades">
+                         <img src="Eliminar.png" alt="Eliminar Materia" />
+                       <i class="pi pi-home"></i>
+                     </h:link>
+
+                </div>
+
+                <div class="content">
+                    <h2>Datos de la Unidad de Aprendizaje</h2>
+
+                    <div class="form-grid">
+                        <h:outputLabel for="unidadAprendizaje" value="Nombre de la unidad de aprendizaje: "/>
+                        <p:inputText id="unidadAprendizaje" value="#{bean.nombreUnidad}" placeholder="Desarrollo de Software"/>
+                        <h:outputLabel for="profesores" value="Profesores que imparten la unidad:"/>
+                        <p:dataTable value="#{bean.profesores}" var="profesor">
+                            <p:column headerText="ID">
+                                <h:outputText value="#{profesor.id}"/>
+                            </p:column>
+                            <p:column headerText="Nombre y Apellidos">
+                                <h:outputText value="#{profesor.nombre}"/>
+                            </p:column>
+                            <p:column headerText="RFC">
+                                <h:outputText value="#{profesor.rfc}"/>
+                            </p:column>
+                        </p:dataTable>
+                    </div>
+
+                    <div class="form-buttons">
+                        
+                        <p:commandButton value="Atrás" icon="pi pi-arrow-left" styleClass="ui-button-secondary" />
+                        <p:commandButton value="Modificar" icon="pi pi-pencil" styleClass="ui-button-success" />
+                                           <p:commandButton value="Buscar" icon="pi pi-arrow-left" styleClass="ui-button-secondary" />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </h:form>
+</body>
+</html>
