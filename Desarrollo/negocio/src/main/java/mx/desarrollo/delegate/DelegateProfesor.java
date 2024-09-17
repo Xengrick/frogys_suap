@@ -14,6 +14,8 @@ import mx.desarrollo.integracion.ServiceLocator;
 public class DelegateProfesor {
     
     public Profesor registrarProfesor(String nombre, String apellido, String rfc) {
+        Profesor profesor = new Profesor();
+
         if (nombre == null || nombre.trim().isEmpty()) {
             throw new IllegalArgumentException("El nombre no puede estar vacío.");
         }
@@ -33,7 +35,15 @@ public class DelegateProfesor {
             throw new IllegalArgumentException("El formato del RFC no es válido.");
         }
         
-        Profesor profesor = new Profesor();
+        if (!nombre.equals(profesor.getNombre()) && !apellido.equals(profesor.getApellido())){
+            throw new IllegalArgumentException("El nombre y el apellido no pueden ser igual a no ya guardado");
+        }
+        
+        if (!rfc.equals(profesor.getRfc())){
+            throw new IllegalArgumentException("El RFC no puede ser igual a uno ya guardado");
+        }
+        
+        //Profesor profesor = new Profesor();
         profesor.setNombre(nombre);
         profesor.setApellido(apellido);
         profesor.setRfc(rfc);
