@@ -5,21 +5,37 @@
 <h:head>
     <title>Gestión de Unidades de Aprendizaje</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+             flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #fff;
+        }
+        .header {
+             background-color: #ffebaf;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            justify-content: space-between;
+            
+        }
         .layout {
             display: flex;
             height: 100vh;
         }
 
-        /* Sidebar */
-        .sidebar {
-            width: 220px;
-            background-color: #F5DEB3;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            gap: 20px;
-        }
+      
+       
 
         .sidebar h3 {
             font-size: 18px;
@@ -58,7 +74,6 @@
             justify-content: space-between;
         }
 
-        /* Panel header */
         .header-panel {
             text-align: center;
             font-size: 24px;
@@ -67,7 +82,6 @@
             color: black;
         }
 
-        /* DataTable */
         .profesor-table {
             width: 100%;
             border-collapse: collapse;
@@ -139,12 +153,11 @@
                     <span>Modificación</span>
                 </h:commandLink>
                 <h:commandLink action="eliminarUnidad">
-                    <img src="eliminar.png" alt="Eliminar Unidad" />
+                    <img src="basura.png" alt="Eliminar Unidad" />
                     <span>Eliminar Unidad</span>
                 </h:commandLink>
             </div>
 
-            <!-- Contenido principal -->
             <div class="content">
                 <div class="header-panel">
                     Gestión de Unidades de Aprendizaje
