@@ -64,7 +64,7 @@ Contributor(s):
     
     <mapping class="mx.desarrollo.entidad.Asignacion"/>
     <mapping class="mx.desarrollo.entidad.Profesor"/>
-    <mapping class="mx.desarrollo.entidad.UnidadAprendizaje"/>
+    <mapping class="mx.desarrollo.entidad.Unidadaprendizaje"/>
     <mapping class="mx.desarrollo.entidad.Usuario"/>
   </session-factory>
 </hibernate-configuration>

@@ -7,7 +7,12 @@ and open the template in the editor.
     Created on : 16/09/2024, 11:16:48 PM
     Author     : rober
 */
-   
+                html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
              .siract
              {
                  background: white;
@@ -21,10 +26,20 @@ and open the template in the editor.
                 background-color: #f5f0d7;
                 padding: 20px;
                 text-align: center;
-                font-size: 24px;
-                color: green;
+                font-size: 24px; 
                 border-bottom: 3px solid green;
-            }
+                position: relative;
+                height: 60px; 
+}
+
+.logout-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
             .nav-bar {
                 background-color: #ffd699;
                 padding: 10px;
@@ -64,4 +79,3 @@ and open the template in the editor.
                 border-top: 2px solid green;
             }
      
-        

@@ -5,6 +5,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/primeicons/4.1.0/primeicons.min.css" rel="stylesheet"/>
+   
     <title>Gestión de Profesores</title>
     <link href="recursos/css/Gestion_Profesores.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -16,49 +18,42 @@
                     <img src="recursos/imagenes/profesores.png" alt=""/>
                     <h:outputText value="Profesores" styleClass="titulo" />
                 </div>
-<h:link value="Inicio" outcome="index">
-    <i class="pi pi-home"></i>
-</h:link>
-               
+                <h:link value="" outcome="index">
+                    <img src="recursos/imagenes/inicio.png" alt=""/>
+                </h:link>
             </div>
 
             <div class="main">
                 <div class="sidebar">
-                        
-                        <h:link value="Agregar Profesores" outcome="gestionprofesores">
-                            <img src="recursos/imagenes/agregar.png" alt=""/>
-                            <i class="pi pi-home"></i>
-                        </h:link>
+                    <h:link value="Agregar Profesores" outcome="gestionprofesores">
+                        <img src="recursos/imagenes/agregar.png" alt=""/>
+                    </h:link>
 
-                       <h:link value="Consulta General" outcome="Consulta_general_Profesores">
-                           <img src="recursos/imagenes/consulta.png" alt=""/>
-                           <i class="pi pi-home"></i>
-                        </h:link>
+                    <h:link value="Consulta General" outcome="Consulta_general_Profesores">
+                        <img src="recursos/imagenes/consulta.png" alt=""/>
+                    </h:link>
 
-              
-                         <h:link value="Eliminar Profesores" outcome="Elminar_Profesores">
-                             <img src="recursos/imagenes/Eliminar.png" alt=""/>
-                            <i class="pi pi-home"></i>
-                        </h:link>
-
+                    <h:link value="Eliminar Profesores" outcome="Elminar_Profesores">
+                        <img src="recursos/imagenes/Eliminar.png" alt=""/>
+                    </h:link>
                 </div>
 
                 <div class="content">
                     <p:panelGrid columns="2" styleClass="ui-panelgrid-blank form-grid">
                         <h:outputLabel for="identificador" value="ID Profesor(a):" />
-                        <p:inputText id="identificador" value="identificador" />
+                        <p:inputText id="identificador" value="#{gestionProfesoresBeanUI.idProfesor}" />
 
                         <h:outputLabel for="nombre" value="Nombre(s):" />
-                        <p:inputText id="nombre" value="nombre" />
+                        <p:inputText id="nombre" value="#{gestionProfesoresBeanUI.nombre}" />
 
                         <h:outputLabel for="apellidos" value="Apellidos:" />
-                        <p:inputText id="apellidos" value="apellido" />
+                        <p:inputText id="apellidos" value="#{gestionProfesoresBeanUI.apellido}" />
 
                         <h:outputLabel for="rfc" value="RFC:" />
-                        <p:inputText id="rfc" value="rfc" />
+                        <p:inputText id="rfc" value="#{gestionProfesoresBeanUI.rfc}" />
 
                         <h:outputLabel />
-                        <p:commandButton value="Enviar"  styleClass="submit-button" />
+                        <h:commandButton value="Enviar" action="#{gestionProfesoresBeanUI.registrarProfesor}" styleClass="submit-button" />
                     </p:panelGrid>
                 </div>
             </div>

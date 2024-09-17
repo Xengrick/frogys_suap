@@ -6,7 +6,7 @@
 package mx.desarrollo.helper;
 
 import java.io.Serializable;
-import mx.desarrollo.entidad.UnidadAprendizaje;
+import mx.desarrollo.entidad.Unidadaprendizaje;
 import mx.desarrollo.integracion.ServiceFacadeLocator;
 
 /**
@@ -14,9 +14,9 @@ import mx.desarrollo.integracion.ServiceFacadeLocator;
  * @author Be
  */
 public class RegistrarHelper implements Serializable{
-    UnidadAprendizaje unidadAprendizaje;
-    public void registrarUnidadAprendizaje(UnidadAprendizaje unidadAprendizaje){
+    Unidadaprendizaje unidadAprendizaje;
+    public void registrarUnidadAprendizaje(Unidadaprendizaje unidadAprendizaje){
         this.unidadAprendizaje = unidadAprendizaje;
-        ServiceFacadeLocator.getInstanceFacadeUnidadAprendizaje().registrarUnidadAprendizaje(unidadAprendizaje);
+        ServiceFacadeLocator.getInstanceFacadeUnidadAprendizaje().guardarUnidadAprendizaje(unidadAprendizaje);
     }
 }

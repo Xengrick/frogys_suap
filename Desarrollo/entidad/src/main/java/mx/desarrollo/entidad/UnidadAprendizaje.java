@@ -6,9 +6,7 @@
 package mx.desarrollo.entidad;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,10 +14,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -29,13 +25,13 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "unidadaprendizaje")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "UnidadAprendizaje.findAll", query = "SELECT u FROM UnidadAprendizaje u")
-    , @NamedQuery(name = "UnidadAprendizaje.findByIdUnidadAprendizaje", query = "SELECT u FROM UnidadAprendizaje u WHERE u.idUnidadAprendizaje = :idUnidadAprendizaje")
-    , @NamedQuery(name = "UnidadAprendizaje.findByNombre", query = "SELECT u FROM UnidadAprendizaje u WHERE u.nombre = :nombre")
-    , @NamedQuery(name = "UnidadAprendizaje.findByHorasClase", query = "SELECT u FROM UnidadAprendizaje u WHERE u.horasClase = :horasClase")
-    , @NamedQuery(name = "UnidadAprendizaje.findByHorasTaller", query = "SELECT u FROM UnidadAprendizaje u WHERE u.horasTaller = :horasTaller")
-    , @NamedQuery(name = "UnidadAprendizaje.findByHorasLaboratorio", query = "SELECT u FROM UnidadAprendizaje u WHERE u.horasLaboratorio = :horasLaboratorio")})
-public class UnidadAprendizaje implements Serializable {
+    @NamedQuery(name = "Unidadaprendizaje.findAll", query = "SELECT u FROM Unidadaprendizaje u")
+    , @NamedQuery(name = "Unidadaprendizaje.findByIdUnidadAprendizaje", query = "SELECT u FROM Unidadaprendizaje u WHERE u.idUnidadAprendizaje = :idUnidadAprendizaje")
+    , @NamedQuery(name = "Unidadaprendizaje.findByNombre", query = "SELECT u FROM Unidadaprendizaje u WHERE u.nombre = :nombre")
+    , @NamedQuery(name = "Unidadaprendizaje.findByHorasClase", query = "SELECT u FROM Unidadaprendizaje u WHERE u.horasClase = :horasClase")
+    , @NamedQuery(name = "Unidadaprendizaje.findByHorasTaller", query = "SELECT u FROM Unidadaprendizaje u WHERE u.horasTaller = :horasTaller")
+    , @NamedQuery(name = "Unidadaprendizaje.findByHorasLaboratorio", query = "SELECT u FROM Unidadaprendizaje u WHERE u.horasLaboratorio = :horasLaboratorio")})
+public class Unidadaprendizaje implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -55,17 +51,15 @@ public class UnidadAprendizaje implements Serializable {
     @Basic(optional = false)
     @Column(name = "horasLaboratorio")
     private int horasLaboratorio;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUnidadAprendizaje")
-    private List<Asignacion> asignacionList;
 
-    public UnidadAprendizaje() {
+    public Unidadaprendizaje() {
     }
 
-    public UnidadAprendizaje(Integer idUnidadAprendizaje) {
+    public Unidadaprendizaje(Integer idUnidadAprendizaje) {
         this.idUnidadAprendizaje = idUnidadAprendizaje;
     }
 
-    public UnidadAprendizaje(Integer idUnidadAprendizaje, String nombre, int horasClase, int horasTaller, int horasLaboratorio) {
+    public Unidadaprendizaje(Integer idUnidadAprendizaje, String nombre, int horasClase, int horasTaller, int horasLaboratorio) {
         this.idUnidadAprendizaje = idUnidadAprendizaje;
         this.nombre = nombre;
         this.horasClase = horasClase;
@@ -113,15 +107,6 @@ public class UnidadAprendizaje implements Serializable {
         this.horasLaboratorio = horasLaboratorio;
     }
 
-    @XmlTransient
-    public List<Asignacion> getAsignacionList() {
-        return asignacionList;
-    }
-
-    public void setAsignacionList(List<Asignacion> asignacionList) {
-        this.asignacionList = asignacionList;
-    }
-
     @Override
     public int hashCode() {
         int hash = 0;
@@ -132,10 +117,10 @@ public class UnidadAprendizaje implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof UnidadAprendizaje)) {
+        if (!(object instanceof Unidadaprendizaje)) {
             return false;
         }
-        UnidadAprendizaje other = (UnidadAprendizaje) object;
+        Unidadaprendizaje other = (Unidadaprendizaje) object;
         if ((this.idUnidadAprendizaje == null && other.idUnidadAprendizaje != null) || (this.idUnidadAprendizaje != null && !this.idUnidadAprendizaje.equals(other.idUnidadAprendizaje))) {
             return false;
         }
@@ -144,7 +129,7 @@ public class UnidadAprendizaje implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.desarrollo.entidad.UnidadAprendizaje[ idUnidadAprendizaje=" + idUnidadAprendizaje + " ]";
+        return "mx.desarrollo.entidad.Unidadaprendizaje[ idUnidadAprendizaje=" + idUnidadAprendizaje + " ]";
     }
     
 }

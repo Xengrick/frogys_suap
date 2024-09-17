@@ -8,7 +8,7 @@ and open the template in the editor.
     Author     : rober
 */
 
- body {
+  body {
             font-family: Arial, sans-serif;
             background-color: #f7f7f7;
             margin: 0;
@@ -32,7 +32,6 @@ and open the template in the editor.
             justify-content: space-between;
             
         }
-
         .header img {
             height: 40px;
         }

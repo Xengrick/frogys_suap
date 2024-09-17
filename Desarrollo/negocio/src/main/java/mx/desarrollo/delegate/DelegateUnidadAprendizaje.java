@@ -5,7 +5,7 @@
  */
 package mx.desarrollo.delegate;
 
-import mx.desarrollo.entidad.UnidadAprendizaje;
+import mx.desarrollo.entidad.Unidadaprendizaje;
 import mx.desarrollo.integracion.ServiceLocator;
 /**
  *
@@ -16,7 +16,7 @@ public class DelegateUnidadAprendizaje {
     public DelegateUnidadAprendizaje() {
     }
 
-    public void registrarUnidadAprendizaje(UnidadAprendizaje unidadAprendizaje) {
+    public void registrarUnidadAprendizaje(Unidadaprendizaje unidadAprendizaje) {
         ServiceLocator.getInstanceUnidadAprendizajeDAO().save(unidadAprendizaje);
     }
 }

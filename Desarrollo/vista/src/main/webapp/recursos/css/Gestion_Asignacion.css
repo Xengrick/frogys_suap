@@ -7,8 +7,7 @@ and open the template in the editor.
     Created on : 16/09/2024, 11:10:25 PM
     Author     : rober
 */
-
- body {
+body {
             font-family: Arial, sans-serif;
             background-color: #f7f7f7;
             margin: 0;
@@ -53,7 +52,7 @@ and open the template in the editor.
         }
 
         .sidebar {
-            width: 250px;
+            width: 200px;
             background-color: #fff;
             border-right: 1px solid #ccc;
             padding: 20px;
@@ -62,8 +61,8 @@ and open the template in the editor.
         .sidebar a {
             display: flex;
             align-items: center;
-            padding: 15px;
-            margin-bottom: 15px;
+            padding: 10px;
+            margin-bottom: 10px;
             text-decoration: none;
             color: black;
             border-radius: 5px;
@@ -75,13 +74,13 @@ and open the template in the editor.
         }
 
         .sidebar img {
-            height: 24px;
+            height: 20px;
             margin-right: 10px;
         }
 
         .content {
             flex-grow: 1;
-            padding: 40px;
+            padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;

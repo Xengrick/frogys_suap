@@ -10,7 +10,7 @@ import java.io.Serializable;
 import javax.faces.context.FacesContext;
 import mx.desarrollo.entidad.Profesor;
 import mx.desarrollo.entidad.Asignacion;
-import mx.desarrollo.entidad.UnidadAprendizaje;
+import mx.desarrollo.entidad.Unidadaprendizaje;
 import mx.desarrollo.entidad.Usuario;
 import mx.desarrollo.integracion.ServiceFacadeLocator;
 

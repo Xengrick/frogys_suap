@@ -5,7 +5,7 @@
  */
 package mx.desarrollo.DAO;
 
-import mx.desarrollo.entidad.UnidadAprendizaje;
+import mx.desarrollo.entidad.Unidadaprendizaje;
 import mx.desarrollo.persistencia.AbstractDAO;
 
 
@@ -13,8 +13,8 @@ import mx.desarrollo.persistencia.AbstractDAO;
  *
  * @author Be
  */
-public class UnidadAprendizajeDAO extends AbstractDAO<Integer,UnidadAprendizaje>{
-    public void registrarUnidadAprendizaje(UnidadAprendizaje unidadAprendizaje){
+public class UnidadAprendizajeDAO extends AbstractDAO<Integer,Unidadaprendizaje>{
+    public void registrarUnidadAprendizaje(Unidadaprendizaje unidadAprendizaje){
         String sql = "INSERT INTO unidadaprendizaje (idUnidadAprendizaje,nombre,horasClase,horasTaller,horasLaboratorio),VALUES (?, ?, ?)";
         
         

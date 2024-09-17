@@ -6,7 +6,7 @@
 package mx.desarrollo.beanUI;
 
 import java.io.Serializable;
-import mx.desarrollo.entidad.UnidadAprendizaje;
+import mx.desarrollo.entidad.Unidadaprendizaje;
 import mx.desarrollo.helper.RegistrarHelper;
 
 /**
@@ -21,14 +21,14 @@ import java.io.Serializable;
 @ManagedBean(name = "RegistrarBeanUI")
 @SessionScoped
 public class RegistrarBeanUI implements Serializable {
-    private UnidadAprendizaje unidadAprendizaje = new UnidadAprendizaje();
+    private Unidadaprendizaje unidadAprendizaje = new Unidadaprendizaje();
     private RegistrarHelper registrarHelper = new RegistrarHelper();
 
-    public UnidadAprendizaje getUnidadAprendizaje() {
+    public Unidadaprendizaje getUnidadAprendizaje() {
         return unidadAprendizaje;
     }
 
-    public void setUnidadAprendizaje(UnidadAprendizaje unidadAprendizaje) {
+    public void setUnidadAprendizaje(Unidadaprendizaje unidadAprendizaje) {
         this.unidadAprendizaje = unidadAprendizaje;
     }
 
