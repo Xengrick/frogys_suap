@@ -1,0 +1,67 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16/09/2024, 11:16:48 PM
+    Author     : rober
+*/
+   
+             .siract
+             {
+                 background: white;
+                 font-size: 50px;
+                 text-align: center;
+                 padding: 18.5%;
+                 
+                height:auto;
+             }
+            .header {
+                background-color: #f5f0d7;
+                padding: 20px;
+                text-align: center;
+                font-size: 24px;
+                color: green;
+                border-bottom: 3px solid green;
+            }
+            .nav-bar {
+                background-color: #ffd699;
+                padding: 10px;
+                text-align: center;
+                font-size: 18px;
+                color: green;
+                border-bottom: 2px solid green;
+            }
+            .nav-bar a {
+                margin: 0 15px;
+                color: green;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            .panel {
+                padding: 20px;
+                margin: 20px;
+                background-color: #FFF9DB;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            .panel h2 {
+                color: green;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .celda {
+                font-weight: bold;
+                color: green;
+            }
+            .footer {
+                background-color: #ffd699;
+                text-align: center;
+                padding: 10px;
+                font-size: 16px;
+                color: green;
+                border-top: 2px solid green;
+            }
+     
+        

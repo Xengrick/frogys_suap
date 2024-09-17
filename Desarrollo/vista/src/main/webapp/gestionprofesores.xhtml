@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core"
+      lang="es" xml:lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Profesores</title>
+    <link href="recursos/css/Gestion_Profesores.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <h:form>
+        <div class="container">
+            <div class="header">
+                <div class="title-section">
+                    <img src="recursos/imagenes/profesores.png" alt=""/>
+                    <h:outputText value="Profesores" styleClass="titulo" />
+                </div>
+<h:link value="Inicio" outcome="index">
+    <i class="pi pi-home"></i>
+</h:link>
+               
+            </div>
+
+            <div class="main">
+                <div class="sidebar">
+                        
+                        <h:link value="Agregar Profesores" outcome="gestionprofesores">
+                            <img src="recursos/imagenes/agregar.png" alt=""/>
+                            <i class="pi pi-home"></i>
+                        </h:link>
+
+                       <h:link value="Consulta General" outcome="Consulta_general_Profesores">
+                           <img src="recursos/imagenes/consulta.png" alt=""/>
+                           <i class="pi pi-home"></i>
+                        </h:link>
+
+              
+                         <h:link value="Eliminar Profesores" outcome="Elminar_Profesores">
+                             <img src="recursos/imagenes/Eliminar.png" alt=""/>
+                            <i class="pi pi-home"></i>
+                        </h:link>
+
+                </div>
+
+                <div class="content">
+                    <p:panelGrid columns="2" styleClass="ui-panelgrid-blank form-grid">
+                        <h:outputLabel for="identificador" value="ID Profesor(a):" />
+                        <p:inputText id="identificador" value="identificador" />
+
+                        <h:outputLabel for="nombre" value="Nombre(s):" />
+                        <p:inputText id="nombre" value="nombre" />
+
+                        <h:outputLabel for="apellidos" value="Apellidos:" />
+                        <p:inputText id="apellidos" value="apellido" />
+
+                        <h:outputLabel for="rfc" value="RFC:" />
+                        <p:inputText id="rfc" value="rfc" />
+
+                        <h:outputLabel />
+                        <p:commandButton value="Enviar"  styleClass="submit-button" />
+                    </p:panelGrid>
+                </div>
+            </div>
+        </div>
+    </h:form>
+</body>
+</html>
