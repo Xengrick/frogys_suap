@@ -7,15 +7,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestión de Asignaciones</title>
-    <link href="recursos/css/Agregar_Unidades_A_Profesores.css" rel="stylesheet" type="text/css"/>
-    
+    <link href="recursos/css/Eliminar_Asignacion.css" rel="stylesheet" type="text/css"/>
 </h:head>
 <body>
     <h:form>
         <div class="container">
             <div class="header">
+                
                 <h1>Gestión de Asignaciones</h1>
-                <h:link value="Inicio" outcome="index">
+                
+           <h:link value="Inicio" outcome="index">
     <i class="pi pi-home"></i>
 </h:link>
 
@@ -24,47 +25,44 @@
             <div class="main">
                 <div class="sidebar">
                     <h:link value="Agregar Unidad a profesores" outcome="Agregar_Unidades_A_Profesores">
-                             <img src="recursos/imagenes/agregar.png alt="Agregar Materia" />
-                           <i class="pi pi-home"></i>
+                        <img src="recursos/imagenes/agregar.png" alt=""/>
+                        <i class="pi pi-home"></i>
                            </h:link>
                         <h:link value="Modificacion a Profesores" outcome="Modificacion_A_Profesores">
-                           <img src="recursos/imagenes/Editar.png"/>
+                            <img src="recursos/imagenes/Editar.png" alt=""/>
                           <i class="pi pi-home"></i>
                         </h:link>
                     <h:link value="Eliminar Unidades Academicas" outcome="Eliminar_Asignacion">
-                         <img src="recursos/imagenes/Eliminar.png" alt="Eliminar Materia" />
-                       <i class="pi pi-home"></i>
+                        <img src="recursos/imagenes/Eliminar.png" alt=""/>
+                        <i class="pi pi-home"></i>
                      </h:link>
 
                 </div>
 
                 <div class="content">
                     <h2>Gestión de Asignaciones</h2>
-                    <!-- aca contenido-->
                     <div class="form-grid">
                         <div class="select-container">
-                            <label for="selectProfesor">Seleccionar Profesor(a):</label>
-                            <select id="selectProfesor">
-                                <option>Id....Nombre y apellidos......RFC</option>
-                                <option>Id....Nombre y apellidos......RFC</option>
-                                <option>Id....Nombre y apellidos......RFC</option>
-                            </select>
+                            <label for="nombreProfesor">Nombre de profesor(a):</label>
+                            <input type="text" id="nombreProfesor" placeholder="Profesor(a)" />
+                            <button>Buscar</button>
                         </div>
 
                         <div class="select-container">
-                            <label for="selectUnidad">Seleccionar Unidad:</label>
-                            <select id="selectUnidad">
-                                <option>Id..Unidad..Hora Clase..Hora Taller..Hora Lab..</option>
-                                <option>Id..Unidad..Hora Clase..Hora Taller..Hora Lab..</option>
-                                <option>Id..Unidad..Hora Clase..Hora Taller..Hora Lab..</option>
+                            <label>Unidades Asignadas</label>
+                            <select size="4">
+                                <option>Unidad</option>
+                                <option>Unidad</option>
+                                <option>Unidad</option>
                             </select>
+                            <button class="delete-btn">
+                                <img src="recursos/imagenes/basura.png" alt=""/>
+                            </button>
                         </div>
                     </div>
 
-
                     <div class="form-buttons">
                         <p:commandButton value="Atrás" icon="pi pi-arrow-left" styleClass="ui-button-secondary" />
-                        <p:commandButton value="Asignar" icon="pi pi-check" styleClass="ui-button-success" />
                     </div>
                 </div>
             </div>
