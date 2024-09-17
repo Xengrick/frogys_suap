@@ -37,6 +37,9 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Unidadaprendizaje.findByHorasLaboratorio", query = "SELECT u FROM Unidadaprendizaje u WHERE u.horasLaboratorio = :horasLaboratorio")})
 public class Unidadaprendizaje implements Serializable {
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUnidadAprendizaje")
+    private List<Asignacion> asignacionList;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -55,8 +58,6 @@ public class Unidadaprendizaje implements Serializable {
     @Basic(optional = false)
     @Column(name = "horasLaboratorio")
     private int horasLaboratorio;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUnidadAprendizaje")
-    private List<Asignacion> asignacionList;
 
     public Unidadaprendizaje() {
     }
@@ -113,15 +114,6 @@ public class Unidadaprendizaje implements Serializable {
         this.horasLaboratorio = horasLaboratorio;
     }
 
-    @XmlTransient
-    public List<Asignacion> getAsignacionList() {
-        return asignacionList;
-    }
-
-    public void setAsignacionList(List<Asignacion> asignacionList) {
-        this.asignacionList = asignacionList;
-    }
-
     @Override
     public int hashCode() {
         int hash = 0;
@@ -145,6 +137,15 @@ public class Unidadaprendizaje implements Serializable {
     @Override
     public String toString() {
         return "mx.desarrollo.entidad.Unidadaprendizaje[ idUnidadAprendizaje=" + idUnidadAprendizaje + " ]";
+    }
+
+    @XmlTransient
+    public List<Asignacion> getAsignacionList() {
+        return asignacionList;
+    }
+
+    public void setAsignacionList(List<Asignacion> asignacionList) {
+        this.asignacionList = asignacionList;
     }
     
 }

@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      lang="es" xml:lang="es">
+      lang="es" xml:lang="es"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -122,6 +123,8 @@
 </h:head>
 <body>
     <h:form>
+        <p:messages id="messages" p:autoUpdate="true" closable="true" />
+
         <div class="container">
             <div class="header">
                 <h1>Gestión de Asignaciones</h1>
@@ -158,34 +161,34 @@
                 </div>
 
                 <div class="content">
-                    <h2>Gestión de Asignaciones</h2>
+                    <h2>Agregar Unidad a Profesores</h2>
 
                     <div class="form-grid">
                         <div class="select-container">
                             <label for="selectProfesor">Seleccionar Profesor(a):</label>
-                            <select id="selectProfesor">
-                                <option>Id....Nombre y apellidos......RFC</option>
-                                <option>Id....Nombre y apellidos......RFC</option>
-                                <option>Id....Nombre y apellidos......RFC</option>
-                            </select>
+                            <h:selectOneMenu id="selectProfesor" value="#{agregarUnidadProfesorBeanUI.idProfesor}">
+                                <f:selectItems value="#{agregarUnidadProfesorBeanUI.listaProfesores}" var="profesor"
+                                               itemValue="#{profesor.idProfesor}" 
+                                               itemLabel="#{profesor.nombre} #{profesor.apellido}" />
+                                
+                            </h:selectOneMenu>
                         </div>
 
                         <div class="select-container">
                             <label for="selectUnidad">Seleccionar Unidad:</label>
-                            <select id="selectUnidad">
-                                <option>Id..Unidad..Hora Clase..Hora Taller..Hora Lab..</option>
-                                <option>Id..Unidad..Hora Clase..Hora Taller..Hora Lab..</option>
-                                <option>Id..Unidad..Hora Clase..Hora Taller..Hora Lab..</option>
-                            </select>
+                            <h:selectOneMenu id="selectUnidad" value="#{agregarUnidadProfesorBeanUI.idUnidadAprendizaje}">
+                                <f:selectItems value="#{agregarUnidadProfesorBeanUI.listaUnidadesAprendizaje}" var="unidad_aprendizaje"
+                                               itemValue="#{unidad_aprendizaje.idUnidadAprendizaje}" 
+                                               itemLabel="#{unidad_aprendizaje.nombre}" />
+                            </h:selectOneMenu>
                         </div>
                     </div>
 
-                    <p>Si la unidad traslapa con otra asignación dará un mensaje de error</p>
-
-                    <div class="form-buttons">
-                        <p:commandButton value="Atrás" icon="pi pi-arrow-left" styleClass="ui-button-secondary" />
-                        <p:commandButton value="Asignar" icon="pi pi-check" styleClass="ui-button-success" />
-                    </div>
+                     <div class="form-buttons">
+                <p:commandButton value="Atrás" icon="pi pi-arrow-left" styleClass="ui-button-secondary" />
+                <p:commandButton value="Asignar" icon="pi pi-check" styleClass="ui-button-success"
+                                 action="#{agregarUnidadProfesorBeanUI.registrarAsignacion}"/>
+            </div>
                 </div>
             </div>
         </div>

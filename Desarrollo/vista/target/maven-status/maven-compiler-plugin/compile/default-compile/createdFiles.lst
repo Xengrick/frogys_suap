@@ -1,2 +1,10 @@
-mx\desarrollo\helper\LoginHelper.class
+mx\desarrollo\ui\AsignacionBeanUI.class
 mx\desarrollo\ui\LoginBeanUI.class
+mx\desarrollo\ui\ProfesorBeanUI.class
+mx\desarrollo\helper\UnidadAprendizajeBeanHelper.class
+mx\desarrollo\ui\GestionProfesoresBeanUI.class
+mx\desarrollo\helper\LoginHelper.class
+mx\desarrollo\helper\ProfesorBeanHelper.class
+mx\desarrollo\helper\AsignacionBeanHelper.class
+mx\desarrollo\ui\AgregarUnidadProfesorBeanUI.class
+mx\desarrollo\ui\UnidadAprendizajeBeanUI.class

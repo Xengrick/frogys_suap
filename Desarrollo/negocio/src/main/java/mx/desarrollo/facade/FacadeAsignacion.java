@@ -5,27 +5,42 @@
  */
 package mx.desarrollo.facade;
 
-import mx.desarrollo.delegate.DelegateAsignacion;
+import mx.desarrollo.delegate.AsignacionDelegate;
 import mx.desarrollo.entidad.Asignacion;
 
 /**
+ * Facade para manejar la lógica de asignaciones
  *
- * @author Usuario
+ * @author Gustavo
  */
 public class FacadeAsignacion {
-    private final DelegateAsignacion delegateAsignacion;
 
+    private AsignacionDelegate asignacionDelegate;
+
+    /**
+     * Crea una instancia de FacadeAsignacion
+     */
     public FacadeAsignacion() {
-        this.delegateAsignacion = new DelegateAsignacion();
+        this.asignacionDelegate = new AsignacionDelegate();
     }
 
+    /**
+     * Registra una nueva asignación
+     *
+     * @param idProfesor El ID del profesor a asignar.
+     * @param idUnidadAprendizaje El ID de la unidad de aprendizaje a asignar.
+     * @return Asignacion La asignación creada.
+     */
     public Asignacion registrarAsignacion(int idProfesor, int idUnidadAprendizaje) {
-        return delegateAsignacion.registrarAsignacion(idProfesor, idUnidadAprendizaje);
+        return asignacionDelegate.altaAsignacion(idProfesor, idUnidadAprendizaje);
     }
-    
+
+    /**
+     * Guarda una asignación en el sistema.
+     *
+     * @param asignacion La asignación a guardar.
+     */
     public void guardarAsignacion(Asignacion asignacion) {
-        delegateAsignacion.guardarAsignacion(asignacion);
+        asignacionDelegate.guardarAsignacion(asignacion);
     }
-    
-    
 }

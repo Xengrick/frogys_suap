@@ -12,6 +12,6 @@ import mx.desarrollo.persistencia.AbstractDAO;
  *
  * @author Usuario
  */
-public class UnidadaprendizajeDAO extends AbstractDAO<Integer, Unidadaprendizaje>{
+public class UnidadAprendizajeDAO extends AbstractDAO<Integer, Unidadaprendizaje>{
     
 }

@@ -5,7 +5,9 @@
  */
 package test;
 
+import java.util.List;
 import mx.desarrollo.entidad.Asignacion;
+import mx.desarrollo.entidad.Profesor;
 import mx.desarrollo.entidad.Usuario;
 import mx.desarrollo.integracion.ServiceFacadeLocator;
 
@@ -15,17 +17,10 @@ import mx.desarrollo.integracion.ServiceFacadeLocator;
  */
 public class test {
     public static void main(String[] args) {
-        Usuario usuario = new Usuario();
         
-        usuario = ServiceFacadeLocator.getInstanceFacadeUsuario().login("admin","1234");
-        
-        if(usuario.getIdUsuario() != null){
-            System.out.println("Login exitoso con el usuario " + usuario.getNombreUsuario());
-        }else{
-            System.out.println("No se encontro registro");
-        }
-        
-        Asignacion asignacion = new Asignacion();
-        asignacion = ServiceFacadeLocator.getInstanceFacadeAsignacion().registrarAsignacion(1, 1);
+       List<Profesor> profesores = ServiceFacadeLocator.getInstanceFacadeProfesor().mostrarProfesores();
+       for(Profesor profesor : profesores){
+           System.out.println(profesor.getIdProfesor() + profesor.getNombre() + profesor.getApellido() + profesor.getRfc());
+       }
     }
 }
