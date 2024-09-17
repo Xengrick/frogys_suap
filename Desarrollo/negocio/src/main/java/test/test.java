@@ -17,7 +17,7 @@ public class test {
     public static void main(String[] args) {
         Usuario usuario = new Usuario();
         
-        usuario = ServiceFacadeLocator.getInstanceFacadeUsuario().login("admin","1234");
+        usuario = ServiceFacadeLocator.getInstanceFacadeUsuario().login("UserDana","1234");
         
         if(usuario.getIdUsuario() != null){
             System.out.println("Login exitoso con el usuario " + usuario.getNombreUsuario());
