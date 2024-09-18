@@ -26,4 +26,8 @@ public class ProfesorBeanHelper implements Serializable {
     public List<Profesor> getProfesores(){
         return ServiceFacadeLocator.getInstanceFacadeProfesor().mostrarProfesores();
     }
+    
+    public void eliminarProfesor(int idProfesor){
+        ServiceFacadeLocator.getInstanceFacadeProfesor().eliminarProfesor(idProfesor);
+    }
 }

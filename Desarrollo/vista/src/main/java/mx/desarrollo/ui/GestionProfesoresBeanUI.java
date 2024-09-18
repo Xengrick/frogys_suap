@@ -18,13 +18,12 @@ import mx.desarrollo.helper.ProfesorBeanHelper;
  *
  * @author Usuario
  */
-
 @ManagedBean(name = "gestionProfesoresBeanUI")
 @ViewScoped
 public class GestionProfesoresBeanUI implements Serializable {
-    
+
     private ProfesorBeanHelper profesorBeanHelper;
-    
+
     private int idProfesor;
     private String nombre;
     private String apellido;
@@ -34,16 +33,24 @@ public class GestionProfesoresBeanUI implements Serializable {
         this.profesorBeanHelper = new ProfesorBeanHelper();
     }
 
-    public void registrarProfesor(){
+    public void registrarProfesor() {
         try {
             Profesor profesor = profesorBeanHelper.registrarProfesor(idProfesor, nombre, apellido, rfc);
             profesorBeanHelper.guardarProfesor(profesor);
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Profesor registrado", "Profesor dado de alta exitosamente."));
+            limpiarFormulario();
         } catch (IllegalArgumentException e) {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getMessage(), null));
         } catch (Exception e) {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Error inesperado", "Ocurrió un error inesperado. Intente nuevamente."));
         }
+    }
+
+    public void limpiarFormulario() {
+        this.idProfesor = 0;
+        this.nombre = "";
+        this.apellido = "";
+        this.rfc = "";
     }
 
     public int getIdProfesor() {
@@ -77,7 +84,5 @@ public class GestionProfesoresBeanUI implements Serializable {
     public void setRfc(String rfc) {
         this.rfc = rfc;
     }
-    
-    
-    
+
 }

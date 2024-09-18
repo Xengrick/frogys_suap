@@ -21,42 +21,45 @@ import mx.desarrollo.helper.LoginHelper;
  */
 @ManagedBean(name = "loginUI")
 @SessionScoped
-public class LoginBeanUI implements Serializable{
+public class LoginBeanUI implements Serializable {
+
     private LoginHelper loginHelper;
     private Usuario usuario;
-    
+
     public LoginBeanUI() {
         loginHelper = new LoginHelper();
     }
-    
+
     /**
-     * Metodo postconstructor todo lo que este dentro de este metodo
-     * sera la primero que haga cuando cargue la pagina
+     * Método postconstructor, todo lo que esté dentro de este método será lo
+     * primero que haga cuando cargue la página.
      */
     @PostConstruct
-    public void init(){
-        usuario= new Usuario();
+    public void init() {
+        usuario = new Usuario();
     }
 
-     public void login() throws IOException{
-        String appURL = "/index.xhtml";
-        // los atributos de usuario vienen del xhtml 
-        Usuario us= new Usuario();
-        us.setIdUsuario(0);
-        us = loginHelper.Login(usuario.getNombreUsuario(), usuario.getClave());
-          if(us != null && us.getIdUsuario()!=null){
-            // asigno el usuario encontrado al usuario de esta clase para que 
-            // se muestre correctamente en la pagina de informacion
-            usuario=us;
-            FacesContext.getCurrentInstance().getExternalContext().redirect(FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath() + appURL);
-        }else{
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Usuario o contraseña incorrecta:", "Intente de nuevo"));          
+    public void login() throws IOException {
+        String appURL = "index.xhtml";
+
+        // Log para verificar los datos que está recibiendo
+        System.out.println("Usuario a buscar: " + usuario.getNombreUsuario());
+        System.out.println("Usuario a buscar: " + usuario.getClave());
+        // Validación de usuario con el helper
+        Usuario us = loginHelper.Login(usuario.getNombreUsuario(), usuario.getClave());
+
+        // Si se encuentra el usuario, redirige a la página principal
+        if (us != null && us.getIdUsuario() != null) {
+            System.out.println("Usuario recuperado: " + us.getNombreUsuario());
+            usuario = us; // Asigna el usuario recuperado
+            FacesContext.getCurrentInstance().getExternalContext().redirect(appURL);
+        } else {
+            // Si no se encuentra, muestra el mensaje de error
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Usuario o contraseña incorrecta:", "Intente de nuevo"));
         }
     }
 
-    
-    /* getters y setters*/
-
+    /* Getters y setters */
     public Usuario getUsuario() {
         return usuario;
     }
@@ -64,16 +67,4 @@ public class LoginBeanUI implements Serializable{
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-
-    
 }

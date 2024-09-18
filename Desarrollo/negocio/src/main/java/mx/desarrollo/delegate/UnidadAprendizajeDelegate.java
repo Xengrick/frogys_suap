@@ -20,6 +20,7 @@ public class UnidadAprendizajeDelegate {
      * Crea un objeto UnidadAprendizaje para la alta de una nueva unidad de
      * aprendizaje
      *
+     * @param idUnidadAprendizaje Id unidad de aprendizaje.
      * @param nombre El nombre de la unidad de aprendizaje.
      * @param horasClase Las horas de clase de la unidad de aprendizaje.
      * @param horasTaller Las horas de taller de la unidad de aprendizaje.
@@ -27,12 +28,13 @@ public class UnidadAprendizajeDelegate {
      * aprendizaje.
      * @return UnidadAprendizaje El objeto UnidadAprendizaje creado.
      */
-    public Unidadaprendizaje altaUnidadAprendizaje(String nombre, int horasClase, int horasTaller, int horasLaboratorio) {
+    public Unidadaprendizaje altaUnidadAprendizaje(int idUnidadAprendizaje, String nombre, int horasClase, int horasTaller, int horasLaboratorio) {
         validarNombre(nombre);
         validarHorasNoNegativas(horasClase, horasTaller, horasLaboratorio);
         validarHorasMinimas(horasClase, horasTaller, horasLaboratorio);
 
         Unidadaprendizaje unidadAprendizaje = new Unidadaprendizaje();
+        unidadAprendizaje.setIdUnidadAprendizaje(idUnidadAprendizaje);
         unidadAprendizaje.setNombre(nombre);
         unidadAprendizaje.setHorasClase(horasClase);
         unidadAprendizaje.setHorasTaller(horasTaller);

@@ -54,4 +54,15 @@ public class FacadeProfesor {
     public List<Profesor> mostrarProfesores() {
         return delegateProfesor.mostrarProfesores();
     }
+    
+    /**
+     * Obtiene una lista de todos los profesores registrados en el sistema.
+     *
+     * @param idProfesor
+     */
+    public void eliminarProfesor(int idProfesor) {
+        delegateProfesor.eliminarProfesor(idProfesor);
+    }
+    
+    
 }

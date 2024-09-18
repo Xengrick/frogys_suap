@@ -55,6 +55,14 @@ public class ProfesorDelegate {
     public List<Profesor> mostrarProfesores() {
         return ServiceLocator.getInstanceProfesorDAO().findAll();
     }
+    
+    /**
+     * Elimina a un profesor de la base de datos
+     * @param idProfesor
+     */
+    public void eliminarProfesor(int idProfesor) {
+        ServiceLocator.getInstanceProfesorDAO().eliminarProfesorId(idProfesor);
+    }
 
     /**
      * Valida que el nombre no esté vacío.

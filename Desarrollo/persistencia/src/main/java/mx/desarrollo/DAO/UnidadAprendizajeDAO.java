@@ -12,6 +12,9 @@ import mx.desarrollo.persistencia.AbstractDAO;
  *
  * @author Usuario
  */
-public class UnidadAprendizajeDAO extends AbstractDAO<Integer, Unidadaprendizaje>{
-    
+public class UnidadAprendizajeDAO extends AbstractDAO<Integer, Unidadaprendizaje> {
+
+    public void registrarUnidadAprendizaje(Unidadaprendizaje unidadAprendizaje) {
+        String sql = "INSERT INTO unidadaprendizaje (idUnidadAprendizaje,nombre,horasClase,horasTaller,horasLaboratorio),VALUES (?, ?, ?)";
+    }
 }

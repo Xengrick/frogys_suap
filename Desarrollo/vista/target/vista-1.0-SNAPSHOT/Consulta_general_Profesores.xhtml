@@ -4,42 +4,48 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       lang="es" xml:lang="es">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gestión de Profesores</title>
-    <link href="recursos/css/Consulta_General_Profesores.css" rel="stylesheet" type="text/css"/>
-</head>
-<body>
-    <h:form>
-        <div class="container">
-            <div class="header">
-                <div class="title-section">
-                    <img src="recursos/imagenes/profesores.png" alt=""/>
-                    <h:outputText value="Profesores" styleClass="titulo" />
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Gestión de Profesores</title>
+        <link href="recursos/css/Consulta_General_Profesores.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <h:form>
+            <div class="container">
+                <div class="header">
+                    <div class="title-section">
+                        <img src="recursos/imagenes/profesores.png" alt="icono-profesores" />
+                        <h:outputText value="Profesores" styleClass="titulo" />
+                    </div>
+                    <h:link value="Inicio" outcome="index">
+                        <i class="pi pi-home"></i>
+                    </h:link>
+
                 </div>
 
                 <div class="main">
                     <div class="sidebar">
 
                         <h:link value="Agregar Profesores" outcome="gestionprofesores">
-                            <img src="recursos/imagenes/agregar.png" alt=""/>
+                            <img src="recursos/imagenes/agregar.png" alt="Agregar Profesor" />
                             <i class="pi pi-home"></i>
                         </h:link>
 
-                       <h:link value="Consulta General" outcome="Consulta_general_Profesores">
-                           <img src="recursos/imagenes/consulta.png" alt=""/>
-                           <i class="pi pi-home"></i>
+                        <h:link value="Consulta General" outcome="Consulta_general_Profesores">
+                            <img src="recursos/imagenes/consulta.png" alt="Consulta General" />
+                            <i class="pi pi-home"></i>
                         </h:link>
 
-              
-                         <h:link value="Eliminar Profesores" outcome="Elminar_Profesores">
-                             <img src="recursos/imagenes/Eliminar.png" alt=""/>
+
+                        <h:link value="Eliminar Profesores" outcome="Elminar_Profesores">
+                            <img src="recursos/imagenes/Eliminar.png" alt="Eliminar Profesor" />
+
                             <i class="pi pi-home"></i>
                         </h:link>
 
                     </div>
-
+                    
                     <div class="content">
 
                         <p:dataTable var="profesor" value="#{consultaGeneralProfesoresBeanUI.listaProfesores}"
@@ -69,3 +75,4 @@
         </h:form>
     </body>
 </html>
+

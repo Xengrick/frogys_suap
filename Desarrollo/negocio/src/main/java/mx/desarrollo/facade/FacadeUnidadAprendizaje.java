@@ -27,14 +27,15 @@ public class FacadeUnidadAprendizaje {
 
     /**
      * Registra una nueva unidad de aprendizaje con los datos proporcionados.
-     *
+     * @param idUnidadAprendizaje Id de la unidad de aprendizaje.
      * @param nombre El nombre de la unidad de aprendizaje.
      * @param horasClase Las horas de clase de la unidad de aprendizaje.
      * @param horasTaller Las horas de taller de la unidad de aprendizaje.
      * @param horasLaboratorio Las horas de laboratorio de la unidad de la unidad de aprendizaje
+     * @return 
      */
-    public void registrarUnidadAprendizaje(String nombre, int horasClase, int horasTaller, int horasLaboratorio) {
-        delegateUnidadAprendizaje.altaUnidadAprendizaje(nombre, horasClase, horasTaller, horasLaboratorio);
+    public Unidadaprendizaje registrarUnidadAprendizaje(int idUnidadAprendizaje, String nombre, int horasClase, int horasTaller, int horasLaboratorio) {
+        return delegateUnidadAprendizaje.altaUnidadAprendizaje(idUnidadAprendizaje, nombre, horasClase, horasTaller, horasLaboratorio);
     }
 
     /**

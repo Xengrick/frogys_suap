@@ -22,4 +22,5 @@ public class AsignacionBeanHelper implements Serializable{
     public void guardarAsignacion(Asignacion asignacion){
         ServiceFacadeLocator.getInstanceFacadeAsignacion().guardarAsignacion(asignacion);
     }
+
 }
