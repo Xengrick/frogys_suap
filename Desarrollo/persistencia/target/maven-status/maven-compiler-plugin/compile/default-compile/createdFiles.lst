@@ -1,7 +1,9 @@
 mx\desarrollo\integracion\ServiceLocator.class
 mx\desarrollo\persistencia\HibernateUtil.class
-mx\desarrollo\DAO\AlumnoDAO.class
+mx\desarrollo\DAO\ProfesorDAO.class
+mx\desarrollo\DAO\UnidadAprendizajeDAO.class
 test\test.class
 mx\desarrollo\persistencia\InterfaceDAO.class
+mx\desarrollo\DAO\AsignacionDAO.class
 mx\desarrollo\DAO\UsuarioDAO.class
 mx\desarrollo\persistencia\AbstractDAO.class

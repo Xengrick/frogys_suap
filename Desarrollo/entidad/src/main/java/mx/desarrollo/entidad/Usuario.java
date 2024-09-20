@@ -12,8 +12,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -28,76 +26,78 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u")
-    , @NamedQuery(name = "Usuario.findByCorreo", query = "SELECT u FROM Usuario u WHERE u.correo = :correo")
-    , @NamedQuery(name = "Usuario.findByIdusuario", query = "SELECT u FROM Usuario u WHERE u.idusuario = :idusuario")
-    , @NamedQuery(name = "Usuario.findByContrasena", query = "SELECT u FROM Usuario u WHERE u.contrasena = :contrasena")})
+    , @NamedQuery(name = "Usuario.findByIdUsuario", query = "SELECT u FROM Usuario u WHERE u.idUsuario = :idUsuario")
+    , @NamedQuery(name = "Usuario.findByNombreUsuario", query = "SELECT u FROM Usuario u WHERE u.nombreUsuario = :nombreUsuario")
+    , @NamedQuery(name = "Usuario.findByClave", query = "SELECT u FROM Usuario u WHERE u.clave = :clave")
+    , @NamedQuery(name = "Usuario.findByRol", query = "SELECT u FROM Usuario u WHERE u.rol = :rol")})
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Basic(optional = false)
-    @Column(name = "correo")
-    private String correo;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "idusuario")
-    private Integer idusuario;
+    @Column(name = "idUsuario")
+    private Integer idUsuario;
     @Basic(optional = false)
-    @Column(name = "contrasena")
-    private String contrasena;
-    @JoinColumn(name = "idAlumno", referencedColumnName = "idalumno")
-    @ManyToOne(optional = false)
-    private Alumno idAlumno;
+    @Column(name = "nombreUsuario")
+    private String nombreUsuario;
+    @Basic(optional = false)
+    @Column(name = "clave")
+    private String clave;
+    @Basic(optional = false)
+    @Column(name = "rol")
+    private String rol;
 
     public Usuario() {
     }
 
-    public Usuario(Integer idusuario) {
-        this.idusuario = idusuario;
+    public Usuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
-    public Usuario(Integer idusuario, String correo, String contrasena) {
-        this.idusuario = idusuario;
-        this.correo = correo;
-        this.contrasena = contrasena;
+    public Usuario(Integer idUsuario, String nombreUsuario, String clave, String rol) {
+        this.idUsuario = idUsuario;
+        this.nombreUsuario = nombreUsuario;
+        this.clave = clave;
+        this.rol = rol;
     }
 
-    public String getCorreo() {
-        return correo;
+    public Integer getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
-    public Integer getIdusuario() {
-        return idusuario;
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
-    public void setIdusuario(Integer idusuario) {
-        this.idusuario = idusuario;
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
-    public String getContrasena() {
-        return contrasena;
+    public String getClave() {
+        return clave;
     }
 
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 
-    public Alumno getIdAlumno() {
-        return idAlumno;
+    public String getRol() {
+        return rol;
     }
 
-    public void setIdAlumno(Alumno idAlumno) {
-        this.idAlumno = idAlumno;
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idusuario != null ? idusuario.hashCode() : 0);
+        hash += (idUsuario != null ? idUsuario.hashCode() : 0);
         return hash;
     }
 
@@ -108,7 +108,7 @@ public class Usuario implements Serializable {
             return false;
         }
         Usuario other = (Usuario) object;
-        if ((this.idusuario == null && other.idusuario != null) || (this.idusuario != null && !this.idusuario.equals(other.idusuario))) {
+        if ((this.idUsuario == null && other.idUsuario != null) || (this.idUsuario != null && !this.idUsuario.equals(other.idUsuario))) {
             return false;
         }
         return true;
@@ -116,7 +116,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.desarrollo.entidad.Usuario[ idusuario=" + idusuario + " ]";
+        return "mx.desarrollo.entidad.Usuario[ idUsuario=" + idUsuario + " ]";
     }
     
 }
