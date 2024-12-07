@@ -1,6 +1,10 @@
-mx\desarrollo\facade\FacadeAlumno.class
+mx\desarrollo\facade\FacadeUnidadAprendizaje.class
 mx\desarrollo\delegate\DelegateUsuario.class
+mx\desarrollo\delegate\AsignacionDelegate.class
+mx\desarrollo\facade\FacadeProfesor.class
 mx\desarrollo\facade\FacadeUsuario.class
-mx\desarrollo\delegate\DelegateAlumno.class
+mx\desarrollo\delegate\UnidadAprendizajeDelegate.class
+mx\desarrollo\facade\FacadeAsignacion.class
 test\test.class
+mx\desarrollo\delegate\ProfesorDelegate.class
 mx\desarrollo\integracion\ServiceFacadeLocator.class

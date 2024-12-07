@@ -2,56 +2,70 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core"
       lang="es" xml:lang="es">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gestión de Unidades de Aprendizaje</title>
-    <link href="recursos/css/Eliminar_Profesores.css" rel="stylesheet" type="text/css"/>
-</head>
-<body>
-    <h:form>
-        <div class="container">
-            <div class="header">
-                <img src="recursos/imagenes/profesores.png"/>
-                <h1>Profesores</h1>
-                 <h:link value="Inicio" outcome="index">
-    <i class="pi pi-home"></i>
-</h:link>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Gestión de Unidades de Aprendizaje</title>
+        <link href="recursos/css/Eliminar_Profesores.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <h:form>
+            <div class="container">
+                <div class="header">
+                    <img src="recursos/imagenes/profesores.png"/>
+                    <h1>Profesores</h1>
+                    <h:link value="Inicio" outcome="index">
+                        <i class="pi pi-home"></i>
+                    </h:link>
 
-            </div>
-            <div class="main">
-                <div class="sidebar">
+                </div>
+                <div class="main">
+                    <div class="sidebar">
                         <h:link value="Agregar Profesores" outcome="gestionprofesores">
                             <img src="recursos/imagenes/agregar.png" alt="Agregar Profesor" />
-                         <i class="pi pi-home"></i>
-                        </h:link>
-
-                       <h:link value="Consulta General" outcome="Consulta_general_Profesores">
-                                 <img src="recursos/imagenes/consulta.png" alt="Consulta General" />
                             <i class="pi pi-home"></i>
                         </h:link>
-                         <h:link value="Eliminar Profesores" outcome="Elminar_Profesores">
-                                <img src="recursos/imagenes/Eliminar.png " alt="Eliminar Profesor" />
+
+                        <h:link value="Consulta General" outcome="Consulta_general_Profesores">
+                            <img src="recursos/imagenes/consulta.png" alt="Consulta General" />
                             <i class="pi pi-home"></i>
                         </h:link>
-                </div>
-
-                <div class="content">
-                    <h2>Profesores registrados</h2>
-                    <div class="table-wrapper">
-                            <!-- aca va el contenido-->
+                        <h:link value="Eliminar Profesores" outcome="Elminar_Profesores">
+                            <img src="recursos/imagenes/Eliminar.png " alt="Eliminar Profesor" />
+                            <i class="pi pi-home"></i>
+                        </h:link>
                     </div>
-                    <div class="buttons">
-                        <button class="back-btn">
-                            <i class="pi pi-arrow-left"></i> Atrás
-                        </button>
-                        <button class="delete-btn">
-                            <i class="pi pi-trash"></i> Eliminar
-                        </button>
-                    </div>  
+
+                    <div class="content">
+                        <h2>Profesores registrados</h2>
+                        <div class="table-wrapper">
+                            <h:dataTable value="#{eliminarProfesoresBeanUI.listaProfesores}" var="profesor" class="table">
+                                <h:column>
+                                    <f:facet name="header">Id</f:facet>
+                                    <h:outputText value="#{profesor.idProfesor}" />
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">Nombre y Apellidos</f:facet>
+                                    <h:outputText value="#{profesor.nombre} #{profesor.apellido}" />
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">RFC</f:facet>
+                                    <h:outputText value="#{profesor.rfc}" />
+                                </h:column>
+                            </h:dataTable>
+                        </div>
+                        
+                        <div class="buttons">
+                            <h:outputLabel for="idProfesor" value="Ingrese el ID del profesor a eliminar: " />
+                            <h:inputText id="idProfesor" value="#{eliminarProfesoresBeanUI.idProfesor}" />
+
+                            <p:commandButton value="Eliminar" icon="pi pi-trash" 
+                                             action="#{eliminarProfesoresBeanUI.eliminarProfesor(eliminarProfesoresBeanUI.idProfesor)}" 
+                                             update="@form" />
+                        </div>   
+                    </div>
                 </div>
             </div>
-        </div>
-    </h:form>
-</body>
+        </h:form>
+    </body>
 </html>

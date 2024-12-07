@@ -16,7 +16,7 @@
             <div class="header">
                 <div class="title-section">
                     <img src="recursos/imagenes/unidades.png" alt=""/>
-                    <h:outputText value="Profesores" styleClass="titulo" />
+                    <h:outputText value="Unidades de Aprendizaje" styleClass="titulo" />
                 </div>
 <h:link value="Inicio" outcome="index">
     <i class="pi pi-home"></i>
@@ -29,36 +29,38 @@
                        <img src="recursos/imagenes/agregar.png" alt=""/>
                        <i class="pi pi-home"></i>
                     </h:link>
-                         <h:link value="Conssulta General" outcome="Consulta_general_Unidades">
+                         <h:link value="Consulta General" outcome="Consulta_general_Unidades">
                              <img src="recursos/imagenes/consulta.png" alt=""/>
                              <i class="pi pi-home"></i>
                         </h:link>
                              
-                    <h:link value="Eliminar Unidades Academicas" outcome="Eliminar_Unidad">
+                    <h:link value="Eliminar Unidades de Aprendizaje" outcome="Eliminar_Unidad">
                         <img src="recursos/imagenes/Eliminar.png" alt=""/>
                         <i class="pi pi-home"></i>
                      </h:link>
                 </div>
                 <div class="content">
-                    <p:dataTable var="profesor" value=""
+                    <p:dataTable var="unidadAprendizaje" value="#{unidadAprendizajeBeanUI.listaUnidadesAprendizaje}"
                                  emptyMessage="No hay Materias Registradas"
                                  style="width:100%;" >
-                     
-                        <p:column headerText="Nombre">
-                            <h:outputText value="" />
-                        </p:column>
+                        
                         <p:column headerText="ID">
-                            <h:outputText value=""/>
+                            <h:outputText value="#{unidadAprendizaje.idUnidadAprendizaje}"/>
                         </p:column>
+                        
+                        <p:column headerText="Nombre">
+                            <h:outputText value="#{unidadAprendizaje.nombre}" />
+                        </p:column>
+                        
                         <p:column headerText="Horas Clase">
-                            <h:outputText value="" />
+                            <h:outputText value="#{unidadAprendizaje.horasClase}" />
                         </p:column>
 
                         <p:column headerText="Horas Taller">
-                            <h:outputText value="" />
+                            <h:outputText value="#{unidadAprendizaje.horasTaller}" />
                         </p:column>
                         <p:column headerText="Horas Laboratorio">
-                            <h:outputText value=""/>
+                            <h:outputText value="#{unidadAprendizaje.horasLaboratorio}"/>
                         </p:column>
 
                     </p:dataTable>
