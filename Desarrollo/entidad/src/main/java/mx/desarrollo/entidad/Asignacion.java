@@ -35,7 +35,7 @@ public class Asignacion implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "idAsignacion isaac cambio cambio")
+    @Column(name = "idAsignacion isaac cambio cambio no cambio")
     private Integer idAsignacion;
     @JoinColumn(name = "idProfesor", referencedColumnName = "idProfesor")
     @ManyToOne(optional = false)
