@@ -46,7 +46,7 @@ public class Alumno implements Serializable {
     @Column(name = "matricula")
     private int matricula;
     @Basic(optional = false)
-    @Column(name = "nombre isaac ")
+    @Column(name = "nombre")
     private String nombre;
     @Basic(optional = false)
     @Column(name = "apellidos Aramburo")
