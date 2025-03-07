@@ -49,7 +49,7 @@ public class Alumno implements Serializable {
     @Column(name = "nombre isaac ")
     private String nombre;
     @Basic(optional = false)
-    @Column(name = "apellidos")
+    @Column(name = "apellidos Aramburo")
     private String apellidos;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idAlumno")
     private List<Usuario> usuarioList;
